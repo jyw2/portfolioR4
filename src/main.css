@@ -1,0 +1,12 @@
+.page {
+    margin-block: 0px;
+    width: 100%;
+    background-color: rgb(75, 102, 196);
+}
+
+.layer {
+    margin-block: 0px;
+    width: 100%;
+    background-color: rgba(200, 200, 200, 0.334);
+    position: absolute;
+}
