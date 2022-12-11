@@ -1,6 +1,8 @@
 import './main.css'
 import About from './About.js'
 import History from './History.js'
+import Projects from './Projects.js'
+
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -37,6 +39,7 @@ function Main() {
                 <Stack alignItems="center" spacing={10} justifyContent="center">
                     <About />
                     <History />
+                    <Projects />
                 </Stack>
             </Container >
 

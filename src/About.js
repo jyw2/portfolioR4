@@ -10,7 +10,7 @@ function About() {
     return (
         <Stack sx={{ width: '75%' }} spacing={2} alignItems="center" justifyContent="center">
             <div>
-                <Container >
+                <Container sx={{ position: "relative" }} >
                     <Typography fontSize="180px" variant='h1' align="center" sx={{ color: "white", letterSpacing: '-20px', fontFamily: "inter", fontWeight: "bold" }}>
                         WELCOME
                     </Typography>
