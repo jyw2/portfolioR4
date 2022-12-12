@@ -8,11 +8,12 @@ const defaultTheme = createTheme({
         },
         secondary: {
             dark: "#F0EEE9",
-            main: "#FFFFFF"
+            main: "#FFFFFF",
+            light: "#B8EB42"
         },
-        tertiary: {
-            main: "#B8EB42"
-        }
+    },
+    typography: {
+        fontFamily: "inter"
     }
 
 })

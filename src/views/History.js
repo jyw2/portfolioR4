@@ -5,12 +5,34 @@ import ShadowContainer from './ShadowContainer';
 import { fontFamily } from '@mui/system';
 
 function History() {
+
     return (
         <Stack alignItems="center" justifyContent="center" spacing={10}>
+            <Container id="blackStripe" maxWidth="false" sx={{
+                backgroundColor: '#F0EEE9',
+                height: '600px',
+                width: '3000px',
+                transform: 'rotate(12deg)',
+                position: 'absolute',
+                top: '900px',
+                left: '-200px'
+            }}>
+            </Container>
+            <Container id="blackStripe" maxWidth="false" sx={{
+                backgroundColor: '#111111',
+                height: '600px',
+                width: '3000px',
+                transform: 'rotate(12deg)',
+                position: 'absolute',
+                top: '950px',
+                left: '-200px'
+            }}>
+            </Container>
+
             <Stack direction="row" alignItems="center" justifyContent="center">
                 <ShadowContainer
                     align='right'
-                    name="University of Alberta"
+                    name="UNIVERSITY OF ALBERTA"
                     role="BSc Cmptr Eng Software Co-op"
                     keywords="Object oriented. testing, design, languages, operating systems, databases"
                 >
@@ -18,10 +40,10 @@ function History() {
                     Alberta’s premier University.
                 </ShadowContainer>
 
-                <Container sx={{ width: "200px" }}></Container>
+                <Container sx={{ width: "300px" }}></Container>
 
                 <ShadowContainer align='left'
-                    name="IronSight"
+                    name="IRONSIGHT"
                     role="Software Developer Intern"
                     keywords="Vue, Flutter, .NET, MySql, Migrations"
                 >
@@ -30,7 +52,7 @@ function History() {
                     mobile components, cloud solutions and perform database
                 </ShadowContainer>
             </Stack>
-            <Typography sx={{ fontFamily: "inter", fontWeight: "bold", fontSize: "40px" }}>
+            <Typography sx={{ fontFamily: "inter", fontWeight: "bold", fontSize: "40px", color: "#F0EEE9", zIndex: "2" }}>
                 THE NEXT CHAPTER...
             </Typography>
         </Stack >

@@ -1,6 +1,8 @@
 .page {
     margin-block: 0px;
+    padding: 0%;
     width: 100%;
+    height: fit-content;
     background-color: rgb(75, 102, 196);
 }
 

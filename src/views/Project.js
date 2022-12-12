@@ -19,8 +19,8 @@ function Project(props) {
                     {props.keywords.join(", ")}
                 </Typography>
                 <Stack spacing={2} direction="row" alignItems="center" justifyContent="center">
-                    <Button href={props.codeLink} sx={{ width: "100px", backgroundColor: "white", color: "black" }} variant="contained">code</Button>
-                    <Button href={props.viewLink} sx={{ backgroundColor: "white", color: "black" }} variant="contained">see it in action</Button>
+                    <Button target="_blank" href={props.codeLink} sx={{ width: "100px", backgroundColor: "white", color: "black" }} variant="contained">code</Button>
+                    <Button target="_blank" href={props.viewLink} sx={{ backgroundColor: "white", color: "black" }} variant="contained">see it in action</Button>
                 </Stack>
             </Container >
         </Container >

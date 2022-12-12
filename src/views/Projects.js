@@ -1,6 +1,6 @@
 import Stack from '@mui/material/Stack';
 import Project from './Project';
-import ProjectModel from './projectModel';
+import ProjectModel from '../models/projectModel';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import ShadowContainer from './ShadowContainer';
@@ -44,7 +44,9 @@ function Projects() {
             `React based web app for keeping 
             track of the Computer Engineering 
             club's snack tabs.`,
-            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase"]
+            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase"],
+            "https://github.com/UAlbertaCompEClub/credit-tracking",
+            "https://creddi.compeclub.com/"
         )
     ]
     return (
