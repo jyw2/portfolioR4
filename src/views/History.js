@@ -6,16 +6,19 @@ import { fontFamily } from '@mui/system';
 
 function History() {
 
+    let stripeOffset = 200
+    let spacerWidth = 230
+
     return (
-        <Stack alignItems="center" justifyContent="center" spacing={10}>
+        <Stack alignItems="center" justifyContent="center" spacing={10} sx={{ position: "relative" }}>
             <Container id="blackStripe" maxWidth="false" sx={{
                 backgroundColor: '#F0EEE9',
                 height: '600px',
                 width: '3000px',
                 transform: 'rotate(12deg)',
                 position: 'absolute',
-                top: '900px',
-                left: '-200px'
+                top: `${stripeOffset}px`,
+                left: '-300px'
             }}>
             </Container>
             <Container id="blackStripe" maxWidth="false" sx={{
@@ -24,37 +27,50 @@ function History() {
                 width: '3000px',
                 transform: 'rotate(12deg)',
                 position: 'absolute',
-                top: '950px',
-                left: '-200px'
+                top: `${stripeOffset + 50}px`,
+                left: '-300px'
             }}>
             </Container>
 
-            <Stack direction="row" alignItems="center" justifyContent="center">
+            <Stack direction="row" alignItems="center" justifyContent="center" spacing={0}>
                 <ShadowContainer
                     align='right'
                     name="UNIVERSITY OF ALBERTA"
                     role="BSc Cmptr Eng Software Co-op"
                     keywords="Object oriented. testing, design, languages, operating systems, databases"
+                    accentShape='0'
                 >
                     Cut my teeth on the fundamentals in
                     Alberta’s premier University.
                 </ShadowContainer>
 
-                <Container sx={{ width: "300px" }}></Container>
+                <div style={{ width: `${spacerWidth}px`, zIndex: "2", position: 'relative' }}>
+                    <Stack direction="column" sx={{ position: "relative", width: `${spacerWidth}px` }} >
+                        <div style={{ height: '10px', background: '#b8b8b8' }} />
+                        <div style={{ height: '40px' }} />
+                        <div style={{ height: '70px', background: '#b8b8b8' }} />
+                    </Stack>
+                    <img src={require('./../assets/zigzagArrow.png')} style={{ top: '0px', left: `${spacerWidth * 0.2 / 2}px`, alt: "right arrow", width: `${spacerWidth * 0.8}px`, position: "absolute" }} />
+                </div>
 
                 <ShadowContainer align='left'
                     name="IRONSIGHT"
                     role="Software Developer Intern"
                     keywords="Vue, Flutter, .NET, MySql, Migrations"
+                    accentShape='1'
                 >
                     Rumbled with experienced
                     developers to develop web apps,
                     mobile components, cloud solutions and perform database
                 </ShadowContainer>
             </Stack>
-            <Typography sx={{ fontFamily: "inter", fontWeight: "bold", fontSize: "40px", color: "#F0EEE9", zIndex: "2" }}>
-                THE NEXT CHAPTER...
-            </Typography>
+            <div style={{ zIndex: "2", position: 'relative' }}>
+                <img src={require('./../assets/endArrow.png')} style={{ top: '-40px', left: '480px', alt: "right arrow", width: '200px', position: "absolute" }} />
+                <Typography sx={{ fontFamily: "inter", fontWeight: "bold", fontSize: "40px", color: "#F0EEE9" }}>
+                    THE NEXT CHAPTER...
+                </Typography>
+            </div>
+
         </Stack >
 
     )
