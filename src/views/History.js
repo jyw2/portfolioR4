@@ -46,9 +46,9 @@ function History() {
 
                 <div style={{ width: `${spacerWidth}px`, zIndex: "2", position: 'relative' }}>
                     <Stack direction="column" sx={{ position: "relative", width: `${spacerWidth}px` }} >
-                        <div style={{ height: '10px', background: '#b8b8b8' }} />
+                        <div style={{ height: '10px', background: '#757575' }} />
                         <div style={{ height: '40px' }} />
-                        <div style={{ height: '70px', background: '#b8b8b8' }} />
+                        <div style={{ height: '70px', background: '#757575' }} />
                     </Stack>
                     <img src={require('./../assets/zigzagArrow.png')} style={{ top: '0px', left: `${spacerWidth * 0.2 / 2}px`, alt: "right arrow", width: `${spacerWidth * 0.8}px`, position: "absolute" }} />
                 </div>

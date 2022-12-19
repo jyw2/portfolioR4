@@ -17,29 +17,24 @@ function Projects() {
             "Angular based web app that " +
             "records and shares your" +
             "gameplay sessions or 'grinds'",
-            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase"]
+            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase"],
+            'https://github.com/jyw2/grindSpot',
+            'https://grindspot.jyuenw.com/'
         ),
         new ProjectModel(
             "One + One",
-            "MMORPG/GRIND/TRACKER",
+            "GESTURE/DRAWING/TOOL",
             "https://i.imgur.com/j4YKlRu.png",
             "Angular based web app that" +
             "records and shares your" +
             "gameplay sessions or 'grinds'",
-            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase"]
-        ),
-        new ProjectModel(
-            "One + One",
-            "MMORPG/GRIND/TRACKER",
-            "https://i.imgur.com/j4YKlRu.png",
-            "Angular based web app that" +
-            "records and shares your" +
-            "gameplay sessions or 'grinds'",
-            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase"]
+            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase"],
+            'https://github.com/jyw2/onePlusOne',
+            'https://www.youtube.com/watch?v=uiyajTV66Rw'
         ),
         new ProjectModel(
             "Creddi.io",
-            "MMORPG/GRIND/TRACKER",
+            "CANTEEN/CREDIT/SYSTEM",
             "https://i.imgur.com/j4YKlRu.png",
             `React based web app for keeping 
             track of the Computer Engineering 
