@@ -6,7 +6,7 @@ class ProjectModel {
         description,
         keywords,
         codeLink,
-        viewLink
+        viewLink,
     ) {
         this.name = name
         this.subTitle = subTitle

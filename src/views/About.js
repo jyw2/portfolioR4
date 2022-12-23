@@ -5,7 +5,9 @@ import IconButton from '@mui/material/IconButton';
 import EmailIcon from '@mui/icons-material/Email';
 import CodeIcon from '@mui/icons-material/Code';
 import PhoneIcon from '@mui/icons-material/Phone';
-import WorkIcon from '@mui/icons-material/Work'
+import WorkIcon from '@mui/icons-material/Work';
+
+import colors from '../styles/colors';
 
 function About() {
 
@@ -31,13 +33,13 @@ function About() {
                     </Typography>
                 </Container>
 
-                <Typography align="center" sx={{ paddingLeft: '100px', paddingRight: '100px' }}>
-                    I'm Josh and I love web and game development! I enjoy getting lost in design
-                    patterns, architectures, conventions and seeing the amazing open source projects that other developers are working on.
-                    I've also got an eye for design and skill in illustration.
+                <Typography align="center" sx={{ position: "relative", paddingLeft: '100px', paddingRight: '100px', paddingBottom: '20px' }}>
+                    If you're looking for a developer who loves web and game development,
+                    enjoys learning new architectures and design
+                    patterns and has an eye for design and skill in illustration, you've come to the right place!
                 </Typography>
                 <Stack direction="row" spacing={4} align="center" justifyContent="center" >
-                    <Stack direction="row" spacing={1} align="center">
+                    <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
                         <IconButton disabled>
                             <EmailIcon />
                         </IconButton>
@@ -46,7 +48,7 @@ function About() {
                         </Typography>
                     </Stack>
 
-                    <Stack direction="row" spacing={1} align="center">
+                    <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
                         <IconButton disabled>
                             <PhoneIcon />
@@ -56,7 +58,7 @@ function About() {
                         </Typography>
                     </Stack>
 
-                    <Stack direction="row" spacing={1} align="center">
+                    <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
                         <IconButton href="https://github.com/jyw2" target="_blank">
                             <CodeIcon />
@@ -66,7 +68,7 @@ function About() {
                         </Typography>
                     </Stack>
 
-                    <Stack direction="row" spacing={1} align="center">
+                    <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
                         <IconButton href="https://www.linkedin.com/in/jyw2/" target="_blank">
                             <WorkIcon />
@@ -75,8 +77,8 @@ function About() {
                             linkedIn
                         </Typography>
                     </Stack>
-                </Stack>
-            </div>
+                </Stack >
+            </div >
         </Stack >
     )
 }

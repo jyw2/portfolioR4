@@ -8,9 +8,14 @@ import Button from '@mui/material/Button';
 import colors from '../styles/colors';
 
 function Project(props) {
+    let subTitleFlipFlop = true
+    function getSubTitleLineShift(line) {
+        subTitleFlipFlop = !subTitleFlipFlop
+        return (subTitleFlipFlop ? 1 : -1) * 30 * (line.length / 3)
+    }
     return (
-        <Container>
-            {/* <Container sx={{ zIndex: "0", position: "absolute", top: "20px", left: "70px", width: "450px", height: "350px", backgroundColor: "white", padding: "40px", borderRadius: '10px' }} /> */}
+        <Container sx={{ position: "relative", width: "fit-content", margin: '20px', zIndex: "6" }} disableGutters>
+            <Container sx={{ zIndex: "0", position: "absolute", top: "10px", left: "20px", width: "400px", height: "600px", backgroundColor: "#EEEEEE", padding: "40px", borderRadius: '10px' }} />
             <Container
                 sx={{
                     zIndex: "3",
@@ -23,14 +28,17 @@ function Project(props) {
                 }} >
 
                 {props.subTitle.split("/").map(line =>
-                    <Typography align={props.align} variant="h5" sx={{
+                    <Typography align="center" variant="h5" sx={{
+                        fontSize: "30px",
+                        lineHeight: "24px",
                         fontFamily: "inter",
                         fontWeight: "bold",
+                        marginLeft: `${getSubTitleLineShift(line)}px`,
                         color: colors.secondary
                     }}>{line}</Typography>
                 )}
 
-                {props.name.split("/").map(line => <Typography align={props.align} variant="h5" sx={{
+                {props.name.split("/").map(line => <Typography align="center" variant="h5" sx={{
                     fontSize: '60px',
                     letterSpacing: '-4px',
                     fontFamily: "inter",
@@ -38,15 +46,15 @@ function Project(props) {
                     color: colors.secondary,
                 }}>{line}</Typography>)}
 
-                <Typography align={props.align} sx={{ color: "white", marginTop: "20px", marginBottom: "20px" }}>
+                <Typography align="left" sx={{ color: "#EEEEEE", padding: "40px 40px 10px 40px" }}>
                     {props.description}
                 </Typography>
-                <Typography align={props.align} sx={{ color: "white" }}>
+                <Typography align="left" sx={{ color: "#EEEEEE", padding: "10px 40px 0px 40px", }}>
                     {props.keywords.join(", ")}
                 </Typography>
-                <Stack spacing={2} direction="row" alignItems="center" justifyContent="center" sx={{}}>
-                    <Button disabled={!('codeLink' in props)} target="_blank" href={props.codeLink} sx={{ width: "100px", backgroundColor: "white", color: "black" }} variant="contained">code</Button>
-                    <Button disabled={!('viewLink' in props)} target="_blank" href={props.viewLink} sx={{ backgroundColor: "white", color: "black" }} variant="contained">see it in action</Button>
+                <Stack spacing={2} direction="row" alignItems="center" justifyContent="center" sx={{ position: "absolute", top: "510px", left: "79px" }}>
+                    <Button disabled={(props.codeLink == "")} target="_blank" href={props.codeLink} sx={{ textTransform: "unset", width: "100px", backgroundColor: "white", color: "black" }} variant="contained">code</Button>
+                    <Button disabled={(props.viewLink == "")} target="_blank" href={props.viewLink} sx={{ textTransform: "unset", backgroundColor: "white", color: "black" }} variant="contained">see it in action</Button>
                 </Stack>
             </Container >
         </Container >

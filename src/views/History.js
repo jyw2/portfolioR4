@@ -3,17 +3,20 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import ShadowContainer from './ShadowContainer';
 import { fontFamily } from '@mui/system';
+import { useState } from 'react'
 
 function History() {
 
     let stripeOffset = 200
     let spacerWidth = 230
 
+
+
     return (
         <Stack alignItems="center" justifyContent="center" spacing={10} sx={{ position: "relative" }}>
             <Container id="blackStripe" maxWidth="false" sx={{
                 backgroundColor: '#F0EEE9',
-                height: '600px',
+                height: '750px',
                 width: '3000px',
                 transform: 'rotate(12deg)',
                 position: 'absolute',
@@ -37,11 +40,11 @@ function History() {
                     align='right'
                     name="UNIVERSITY OF ALBERTA"
                     role="BSc Cmptr Eng Software Co-op"
-                    keywords="Object oriented. testing, design, languages, operating systems, databases"
+                    keywords="Object oriented, testing, design, languages, operating systems, databases"
                     accentShape='0'
                 >
                     Cut my teeth on the fundamentals in
-                    Alberta’s premier University.
+                    Alberta’s premier University. Learned the foundations of computers and software development.
                 </ShadowContainer>
 
                 <div style={{ width: `${spacerWidth}px`, zIndex: "2", position: 'relative' }}>
@@ -59,9 +62,9 @@ function History() {
                     keywords="Vue, Flutter, .NET, MySql, Migrations"
                     accentShape='1'
                 >
-                    Rumbled with experienced
+                    Collaborated with experienced
                     developers to develop web apps,
-                    mobile components, cloud solutions and perform database
+                    mobile components, cloud solutions and perform database migrations.
                 </ShadowContainer>
             </Stack>
             <div style={{ zIndex: "2", position: 'relative' }}>
