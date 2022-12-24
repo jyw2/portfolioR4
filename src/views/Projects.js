@@ -10,9 +10,7 @@ import constants from '../constants';
 import colors from '../styles/colors';
 
 function Projects() {
-    const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
-
-    let projects = [
+    const projects = [
         new ProjectModel(
             "Grind Spot",
             "MMORPG/GRIND/TRACKER",
@@ -86,9 +84,10 @@ function Projects() {
         ),
 
     ]
-
+    const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
     const [visibleProjects, setVisProjects] = useState(projects)
     const [show, setShow] = useState(true)
+    const stripeOffset = 1800
 
     function filterProjects(filter) {
         setShow(false)
@@ -102,24 +101,46 @@ function Projects() {
         }, 300)
     }
 
-    let stripeOffset = 1800
-
     return (
         < Stack alignItems="center" justifyContent="center" spacing={10} sx={{ postion: "relative" }} >
 
             <div style={{ position: "relative" }}>
-                <Typography sx={{ position: "absolute", top: "4px", left: "4px", fontFamily: "inter", fontWeight: "bold", color: colors.primary, zIndex: "5", fontSize: small ? "50px" : "100px" }}>PROJECTS</Typography>
-                <Typography sx={{ position: "relative", fontFamily: "inter", fontWeight: "bold", color: colors.secondaryLight, zIndex: "5", fontSize: small ? "50px" : "100px" }}>PROJECTS</Typography>
+                <Typography sx={{
+                    position: "absolute", top: "4px", left: "4px", fontFamily: "inter",
+                    fontWeight: "bold", color: colors.primary, zIndex: "5", fontSize: small ? "50px" : "100px"
+                }}>PROJECTS</Typography>
+                <Typography sx={{
+                    position: "relative", fontFamily: "inter", fontWeight: "bold",
+                    color: colors.secondaryLight, zIndex: "5", fontSize: small ? "50px" : "100px"
+                }}>PROJECTS</Typography>
             </div>
-            <Stack spacing={small ? 1 : 2} direction={small ? "column" : "row"} alignItems="center" justifyContent="center" sx={{ marginTop: "20px !important" }}>
-                <Button onClick={() => filterProjects("Web")} sx={{ width: small ? "200px" : "100px", backgroundColor: colors.primaryLight, textTransform: "unset" }} variant="contained">web</Button>
-                <Button onClick={() => filterProjects("Games")} sx={{ width: small ? "200px" : "100px", backgroundColor: colors.primaryLight, textTransform: "unset" }} variant="contained">games</Button>
-                <Button onClick={() => filterProjects("Native")} sx={{ width: small ? "200px" : "100px", backgroundColor: colors.primaryLight, textTransform: "unset" }} variant="contained">native</Button>
-                <Button onClick={() => filterProjects("All")} sx={{ width: small ? "200px" : "100px", backgroundColor: colors.primaryLight, textTransform: "unset" }} variant="contained">all</Button>
+            <Stack spacing={small ? 1 : 2} direction={small ? "column" : "row"} alignItems="center"
+                justifyContent="center" sx={{ marginTop: "20px !important" }}>
+                <Button onClick={() => filterProjects("Web")}
+                    sx={{
+                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
+                        textTransform: "unset"
+                    }} variant="contained">web</Button>
+                <Button onClick={() => filterProjects("Games")}
+                    sx={{
+                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
+                        textTransform: "unset"
+                    }} variant="contained">games</Button>
+                <Button onClick={() => filterProjects("Native")}
+                    sx={{
+                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
+                        textTransform: "unset"
+                    }} variant="contained">native</Button>
+                <Button onClick={() => filterProjects("All")}
+                    sx={{
+                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
+                        textTransform: "unset"
+                    }} variant="contained">all</Button>
 
             </Stack>
             <Fade in={show}>
-                <Stack direction="row" alignItems="center" justifyContent="center" sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "40px" }}>
+                <Stack direction="row" alignItems="center" justifyContent="center"
+                    sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "40px" }}>
                     {visibleProjects.map(project => <Project
                         key={project.name}
                         name={project.name}
@@ -132,8 +153,6 @@ function Projects() {
                     />)}
                 </Stack>
             </Fade>
-
-
         </Stack >
     )
 }

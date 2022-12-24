@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import ShadowContainer from './ShadowContainer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import constants from '../constants';
+import colors from '../styles/colors';
 
 function History() {
 
@@ -13,9 +14,10 @@ function History() {
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
 
     return (
-        <Stack alignItems="center" justifyContent="center" spacing={10} sx={{ marginTop: small ? "20px !important" : "auto", position: "relative" }}>
+        <Stack alignItems="center" justifyContent="center" spacing={10}
+            sx={{ marginTop: small ? "20px !important" : "auto", position: "relative" }}>
             <Container id="blackStripe" maxWidth="false" sx={{
-                backgroundColor: '#F0EEE9',
+                backgroundColor: colors.secondary,
                 height: '750px',
                 width: '3000px',
                 transform: 'rotate(12deg)',
@@ -25,7 +27,7 @@ function History() {
             }}>
             </Container>
             <Container id="blackStripe" maxWidth="false" sx={{
-                backgroundColor: '#111111',
+                backgroundColor: colors.primarySemiLight,
                 height: '600px',
                 width: '3000px',
                 transform: 'rotate(12deg)',
@@ -48,13 +50,18 @@ function History() {
                     Alberta’s premier University. Learned the foundations of computers and software development.
                 </ShadowContainer>
 
-                {small ? "" : <div style={{ width: `${spacerWidth}px`, height: "auto", zIndex: "2", position: 'relative' }}>
+                {small ? "" : <div
+                    style={{ width: `${spacerWidth}px`, height: "auto", zIndex: "2", position: 'relative' }}>
                     <Stack direction="column" sx={{ position: "relative", width: `${spacerWidth}px` }} >
-                        <div style={{ height: '10px', background: '#757575' }} />
+                        <div style={{ height: '10px', background: colors.grey }} />
                         <div style={{ height: '40px' }} />
-                        <div style={{ height: '70px', background: '#757575' }} />
+                        <div style={{ height: '70px', background: colors.grey }} />
                     </Stack>
-                    <img src={require('./../assets/zigzagArrow.png')} style={{ top: '0px', left: `${spacerWidth * 0.2 / 2}px`, alt: "right arrow", width: `${spacerWidth * 0.8}px`, position: "absolute" }} />
+                    <img src={require('./../assets/zigzagArrow.png')}
+                        style={{
+                            top: '0px', left: `${spacerWidth * 0.2 / 2}px`,
+                            alt: "right arrow", width: `${spacerWidth * 0.8}px`, position: "absolute"
+                        }} />
                 </div>}
 
                 <ShadowContainer align='left'
@@ -70,14 +77,14 @@ function History() {
                 </ShadowContainer>
             </Stack>
             {small ? "" : <div style={{ zIndex: "2", position: 'relative' }}>
-                <img src={require('./../assets/endArrow.png')} style={{ top: '-40px', left: '480px', alt: "right arrow", width: '200px', position: "absolute" }} />
-                <Typography sx={{ fontFamily: "inter", fontWeight: "bold", fontSize: "40px", color: "#F0EEE9" }}>
+                <img src={require('./../assets/endArrow.png')} style={{
+                    top: '-40px', left: '480px', alt: "right arrow", width: '200px', position: "absolute"
+                }} />
+                <Typography sx={{ fontFamily: "inter", fontWeight: "bold", fontSize: "40px", color: colors.secondary }}>
                     THE NEXT CHAPTER...
                 </Typography>
             </div>}
-
         </Stack >
-
     )
 }
 

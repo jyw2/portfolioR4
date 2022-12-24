@@ -1,8 +1,6 @@
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import ShadowContainer from './ShadowContainer';
-import { fontFamily } from '@mui/system';
 import Button from '@mui/material/Button';
 import '../styles/hoverBump.css';
 import colors from '../styles/colors';
@@ -14,10 +12,15 @@ function Project(props) {
         return (subTitleFlipFlop ? 1 : -1) * 30 * (line.length / 3)
     }
 
-
     return (
-        <Container sx={{ position: "relative", width: "fit-content", margin: '20px', zIndex: "6" }} disableGutters>
-            <Container sx={{ zIndex: "0", position: "absolute", top: "10px", left: "20px", width: "400px", height: "550px", backgroundColor: "#EEEEEE", padding: "40px", borderRadius: '10px' }} />
+        <Container
+            sx={{ position: "relative", width: "fit-content", margin: '20px', zIndex: "6" }} disableGutters>
+            <Container
+                sx={{
+                    zIndex: "0", position: "absolute", top: "10px",
+                    left: "20px", width: "400px", height: "550px", backgroundColor: colors.secondary,
+                    padding: "40px", borderRadius: '10px'
+                }} />
             <Container
                 className="hoverBump"
                 sx={{
@@ -49,15 +52,20 @@ function Project(props) {
                     color: colors.secondaryLight,
                 }}>{line}</Typography>)}
 
-                <Typography align="left" sx={{ color: "#EEEEEE", padding: "40px 40px 10px 40px" }}>
+                <Typography align="left" sx={{ color: colors.secondary, padding: "40px 40px 10px 40px" }}>
                     {props.description}
                 </Typography>
-                <Typography align="left" sx={{ color: "#EEEEEE", padding: "10px 40px 0px 40px", }}>
+                <Typography align="left" sx={{ color: colors.secondary, padding: "10px 40px 0px 40px", }}>
                     {props.keywords.join(", ")}
                 </Typography>
-                <Stack spacing={2} direction="row" alignItems="center" justifyContent="center" sx={{ position: "absolute", top: "430px", left: "79px" }}>
-                    <Button disabled={(props.codeLink == "")} target="_blank" href={props.codeLink} sx={{ textTransform: "unset", width: "100px", backgroundColor: "white", color: "black" }} variant="contained">code</Button>
-                    <Button disabled={(props.viewLink == "")} target="_blank" href={props.viewLink} sx={{ textTransform: "unset", backgroundColor: "white", color: "black" }} variant="contained">see it in action</Button>
+                <Stack spacing={2} direction="row" alignItems="center" justifyContent="center"
+                    sx={{ position: "absolute", top: "430px", left: "79px" }}>
+                    <Button disabled={(props.codeLink == "")} target="_blank" href={props.codeLink}
+                        sx={{ textTransform: "unset", width: "100px", backgroundColor: "white", color: "black" }}
+                        variant="contained">code</Button>
+                    <Button disabled={(props.viewLink == "")} target="_blank" href={props.viewLink}
+                        sx={{ textTransform: "unset", backgroundColor: "white", color: "black" }}
+                        variant="contained">see it in action</Button>
                 </Stack>
             </Container >
         </Container >

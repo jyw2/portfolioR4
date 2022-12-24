@@ -43,12 +43,18 @@ function About() {
                     <Container sx={{ position: "relative", width: "fit-content" }} >
                         <Typography variant='h1' align="center" sx={
                             {
-                                fontSize: small ? "80px" : "180px", color: "white", letterSpacing: small ? '-10px' : '-20px', fontFamily: "inter", fontWeight: "bold"
+                                fontSize: small ? "80px" : "180px", color: "white",
+                                letterSpacing: small ? '-10px' : '-20px', fontFamily: "inter", fontWeight: "bold"
                             }}
                         >
                             WELCOME
                         </Typography>
-                        <Typography variant='h1' align="center" sx={{ color: colors.primaryLight, fontSize: small ? "80px" : "180px", position: 'absolute', left: '20px', top: '-5px', letterSpacing: small ? '-10px' : '-20px', fontFamily: "inter", fontWeight: "bold" }}>
+                        <Typography variant='h1' align="center"
+                            sx={{
+                                color: colors.primaryLight, fontSize: small ? "80px" : "180px",
+                                position: 'absolute', left: '20px', top: '-5px',
+                                letterSpacing: small ? '-10px' : '-20px', fontFamily: "inter", fontWeight: "bold"
+                            }}>
                             WELCOME
                         </Typography>
                     </Container>
@@ -56,7 +62,11 @@ function About() {
 
                 <Fade in={showDesc}>
                     <div>
-                        <Typography align="center" sx={{ fontSize: small ? "15px" : "18px", position: "relative", paddingLeft: small ? '30px' : '100px', paddingRight: small ? '30px' : '100px', paddingBottom: '20px' }}>
+                        <Typography align="center" sx={{
+                            fontSize: small ? "15px" : "18px",
+                            position: "relative", paddingLeft: small ? '30px' : '100px',
+                            paddingRight: small ? '30px' : '100px', paddingBottom: '20px'
+                        }}>
                             If you're looking for a developer who loves web and game development,
                             enjoys learning new architectures and design
                             patterns and has an eye for design and skill in illustration, you've come to the right place!
@@ -83,20 +93,24 @@ function About() {
 
                             <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
-                                <IconButton href="https://github.com/jyw2" target="_blank" sx={small ? { width: '10px', height: '10px' } : {}}>
+                                <IconButton href="https://github.com/jyw2" target="_blank"
+                                    sx={small ? { width: '10px', height: '10px' } : {}}>
                                     <CodeIcon />
                                 </IconButton>
-                                <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center" style={{ cursor: "pointer" }} onClick={handleGitClick}>
+                                <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"
+                                    style={{ cursor: "pointer" }} onClick={handleGitClick}>
                                     github
                                 </Typography>
                             </Stack>
 
                             <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
-                                <IconButton href="https://www.linkedin.com/in/jyw2/" target="_blank" sx={small ? { width: '10px', height: '10px' } : {}}>
+                                <IconButton href="https://www.linkedin.com/in/jyw2/" target="_blank"
+                                    sx={small ? { width: '10px', height: '10px' } : {}}>
                                     <WorkIcon />
                                 </IconButton>
-                                <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center" style={{ cursor: "pointer" }} onClick={handleLinkedInClick}>
+                                <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"
+                                    style={{ cursor: "pointer" }} onClick={handleLinkedInClick}>
                                     linkedIn
                                 </Typography>
                             </Stack>
