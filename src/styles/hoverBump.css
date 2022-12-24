@@ -1,0 +1,8 @@
+.hoverBump {
+    top: 0px;
+    transition: top .2s;
+}
+
+.hoverBump:hover {
+    top: -20px;
+}

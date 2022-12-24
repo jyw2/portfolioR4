@@ -2,10 +2,18 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import colors from '../styles/colors';
+import '../styles/hoverBump.css';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import constants from '../constants';
 
 function ShadowContainer(props) {
+    function openLink() {
+        window.open(props.link)
+    }
+
+    const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
     return (
-        <Container disableGutters sx={{ position: "relative" }}>
+        <Container disableGutters sx={{ position: "relative", cursor: "pointer" }} onClick={openLink}>
             {props.accentShape == 0 ?
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style={{ width: "120px", height: "120px", top: '200px', left: '-80px', position: 'absolute', zIndex: '4' }} >
                     <circle cx="50" cy="50" r="50" fill={colors.accent} />
@@ -18,8 +26,8 @@ function ShadowContainer(props) {
             }
 
 
-            <Container sx={{ zIndex: "0", position: "absolute", top: "20px", left: "20px", width: "450px", height: "350px", backgroundColor: "white", padding: "40px", borderRadius: '3px' }} />
-            <Container sx={{ zIndex: "3", position: "relative", width: "450px", height: "350px", backgroundColor: "black", padding: "20px", borderRadius: '3px' }} >
+            <Container sx={{ zIndex: "0", position: "absolute", top: "20px", left: "20px", width: small ? "300px" : "450px", height: small ? "450px" : "350px", backgroundColor: "white", padding: "40px", borderRadius: '3px' }} />
+            <Container className="hoverBump" sx={{ zIndex: "3", position: "relative", width: small ? "300px" : "450px", height: small ? "450px" : "350px", backgroundColor: "black", padding: "20px", borderRadius: '3px' }} >
                 <div style={{
                     padding: "20px"
                 }}>
