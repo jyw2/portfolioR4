@@ -87,7 +87,6 @@ function Projects() {
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
     const [visibleProjects, setVisProjects] = useState(projects)
     const [show, setShow] = useState(true)
-    const stripeOffset = 1800
 
     function filterProjects(filter) {
         setShow(false)

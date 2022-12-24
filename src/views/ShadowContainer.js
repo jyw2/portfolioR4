@@ -13,13 +13,13 @@ function ShadowContainer(props) {
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
     return (
         <Container disableGutters sx={{ position: "relative", cursor: "pointer" }} onClick={openLink}>
-            {props.accentShape == 0 ?
+            {props.accentShape === 0 ?
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
                     style={{ width: "120px", height: "120px", top: '200px', left: '-80px', position: 'absolute', zIndex: '4' }} >
                     <circle cx="50" cy="50" r="50" fill={colors.accent} />
                 </svg> : ''}
 
-            {props.accentShape == 1 ?
+            {props.accentShape === 1 ?
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
                     style={{ width: "100px", height: "100px", top: '-80px', left: '300px', position: 'absolute', zIndex: '4' }} >
                     <circle cx="50" cy="50" r="50" fill={colors.accent} />

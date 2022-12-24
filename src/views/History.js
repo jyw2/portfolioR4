@@ -57,7 +57,7 @@ function History() {
                         <div style={{ height: '40px' }} />
                         <div style={{ height: '70px', background: colors.grey }} />
                     </Stack>
-                    <img src={require('./../assets/zigzagArrow.png')}
+                    <img src={require('./../assets/zigzagArrow.png')} alt="zigzag arrow"
                         style={{
                             top: '0px', left: `${spacerWidth * 0.2 / 2}px`,
                             alt: "right arrow", width: `${spacerWidth * 0.8}px`, position: "absolute"
@@ -77,7 +77,7 @@ function History() {
                 </ShadowContainer>
             </Stack>
             {small ? "" : <div style={{ zIndex: "2", position: 'relative' }}>
-                <img src={require('./../assets/endArrow.png')} style={{
+                <img src={require('./../assets/endArrow.png')} alt="enter arrow" style={{
                     top: '-40px', left: '480px', alt: "right arrow", width: '200px', position: "absolute"
                 }} />
                 <Typography sx={{ fontFamily: "inter", fontWeight: "bold", fontSize: "40px", color: colors.secondary }}>

@@ -3,10 +3,7 @@ import About from './About.js'
 import History from './History.js'
 import Projects from './Projects.js'
 import React from 'react'
-
 import Stack from '@mui/material/Stack';
-
-import { useTheme } from '@mui/material';
 import { ThemeProvider } from '@mui/material';
 import defaultTheme from '../styles/DefaultTheme.js';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -16,12 +13,8 @@ import constants from '../constants';
 
 function Main() {
     const bgLink = "https://imgur.com/eAArZiy.png"
-    const theme = useTheme();
     const contentRef = React.createRef();
-
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
-
-
 
     return (
         <ThemeProvider theme={defaultTheme}>

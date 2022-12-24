@@ -60,10 +60,10 @@ function Project(props) {
                 </Typography>
                 <Stack spacing={2} direction="row" alignItems="center" justifyContent="center"
                     sx={{ position: "absolute", top: "430px", left: "79px" }}>
-                    <Button disabled={(props.codeLink == "")} target="_blank" href={props.codeLink}
+                    <Button disabled={(props.codeLink === "")} target="_blank" href={props.codeLink}
                         sx={{ textTransform: "unset", width: "100px", backgroundColor: "white", color: "black" }}
                         variant="contained">code</Button>
-                    <Button disabled={(props.viewLink == "")} target="_blank" href={props.viewLink}
+                    <Button disabled={(props.viewLink === "")} target="_blank" href={props.viewLink}
                         sx={{ textTransform: "unset", backgroundColor: "white", color: "black" }}
                         variant="contained">see it in action</Button>
                 </Stack>
