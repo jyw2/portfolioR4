@@ -67,7 +67,7 @@ function History() {
                 <ShadowContainer align='left'
                     name="IRONSIGHT"
                     role="Software Developer Intern"
-                    keywords="Vue, Flutter, .NET, MySql, Migrations"
+                    keywords="Vue, Flutter, .NET, MySql, Migrations, Azure, Microservices"
                     accentShape='1'
                     link='https://ironsight.app/'
                 >
