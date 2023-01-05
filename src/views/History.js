@@ -42,7 +42,7 @@ function History() {
                     align='right'
                     name="UNIVERSITY OF ALBERTA"
                     role="BSc Cmptr Eng Software Co-op"
-                    keywords="Object oriented, testing, design, languages, operating systems, databases"
+                    keywords="Object Oriented, Testing, Design, Common Languages, Operating systems, Databases"
                     accentShape='0'
                     link="https://calendar.ualberta.ca/preview_program.php?catoid=34&poid=38764"
                 >
