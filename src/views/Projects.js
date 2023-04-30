@@ -12,8 +12,8 @@ import colors from '../styles/colors';
 function Projects() {
     const projects = [
         new ProjectModel(
-            "Grind Spot",
-            "MMORPG/GRIND/TRACKER",
+            "BDO GS",
+            "MMORPG/TRACKER/UTILITY",
             "https://i.imgur.com/j4YKlRu.png",
             "Angular based web app that " +
             "records and shares your " +
