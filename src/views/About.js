@@ -80,6 +80,16 @@ function About() {
                                     JYUENW@gmail.com
                                 </Typography>
                             </Stack>}
+
+                                
+                            {small ? "" : <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
+                                <IconButton disabled sx={small ? { width: '10px', height: '10px' } : {}}>
+                                    <PhoneIcon />
+                                </IconButton>
+                                <Typography align="center" display='flex' alignItems="center" color={colors.primaryLight} >
+                                    -
+                                </Typography>
+                            </Stack>}
                                 
                             <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
