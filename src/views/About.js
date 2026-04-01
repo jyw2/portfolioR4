@@ -55,7 +55,7 @@ function About() {
                     <div>
              
                         <Stack direction="row" spacing={4} align="center" alignItems="center" justifyContent="center" 
-                            sx={{border:"1px solid grey", marginLeft:"5%",  marginRight:"5%"}}
+                            sx={{border:"1px solid grey", marginLeft:"7%",  marginRight:"7%"}}
                         >
                             {small ? "" : <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
                                 <IconButton disabled sx={small ? { width: '10px', height: '10px' } : {}}>
