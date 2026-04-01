@@ -91,7 +91,7 @@ function Projects() {
     const [visibleProjects, setVisProjects] = useState(projects)
     const [show, setShow] = useState(true)   
     const filterButtonStyle = {
-        width: small ? "200px" : "200px", backgroundColor: colors.primaryLight,
+        width: small ? "200px" : "100%", backgroundColor: colors.secondary,
         textTransform: "unset", color:colors.primary, fontWeight:"bold", borderRadius:"1px"
     }
 
@@ -108,56 +108,63 @@ function Projects() {
     }
 
     return (
-        < Stack alignItems="center" justifyContent="center" spacing={1} sx={{ postion: "relative", backgroundColor: colors.primary }} >
-            {/* <Container id="blackStripe" maxWidth="false" sx={{
-                backgroundColor: colors.secondary,
-                height: '750px',
-                width: '3000px',
-                transform: 'rotate(12deg)',
-                position: 'absolute',
-                top: `${stripeOffset}px`,
-                left: '-600px'
-            }}>
-            </Container> */}
-            {/* <Container id="blackStripe" maxWidth="false" sx={{
-                backgroundColor: colors.primarySemiLight,
-                height: '600px',
-                width: '3000px',
-                transform: 'rotate(12deg)',
-                position: 'absolute',
-                top: `${stripeOffset + 50}px`,
-                left: '-600px'
-            }}>
-            </Container>
-      */}
-            <Stack spacing={small ? 1 : 1} direction={small ? "column" : "row"} alignItems="center"
-                justifyContent="center" sx={{ marginTop: "20px !important" }}>
-                <Button onClick={() => filterProjects("Web")}
-                    sx={filterButtonStyle} variant="contained">WEB DEV</Button>
-                <Button onClick={() => filterProjects("Games")}
-                    sx={filterButtonStyle} variant="contained">GAME DEV</Button>
-                <Button onClick={() => filterProjects("Techart")}
-                    sx={filterButtonStyle} variant="contained">TECH ART</Button>
-                <Button onClick={() => filterProjects("Techart")}
-                    sx={filterButtonStyle} variant="contained">CONCEPT ART</Button>
+        <Stack backgroundColor={colors.primarySemiLight} width={"100%"} paddingTop={"10px"} paddingBottom={"10px"}>
+            <Stack sx= {{backgroundColor: colors.primarySemiLight, width:"100%", justifyContent:"center", alignItems:"center"}}>
+                < Stack alignItems="center" justifyContent="center" spacing={3} sx={{
+                    postion: "relative",  paddingTop:"20px", paddingBottom:"20px",
+                    width:"fit-content"
+                }} >
+                    {/* <Container id="blackStripe" maxWidth="false" sx={{
+                        backgroundColor: colors.secondary,
+                        height: '750px',
+                        width: '3000px',
+                        transform: 'rotate(12deg)',
+                        position: 'absolute',
+                        top: `${stripeOffset}px`,
+                        left: '-600px'
+                    }}>
+                    </Container> */}
+                    {/* <Container id="blackStripe" maxWidth="false" sx={{
+                        backgroundColor: colors.primarySemiLight,
+                        height: '600px',
+                        width: '3000px',
+                        transform: 'rotate(12deg)',
+                        position: 'absolute',
+                        top: `${stripeOffset + 50}px`,
+                        left: '-600px'
+                    }}>
+                    </Container>
+            */}
+                    <Stack spacing={small ? 1 : 1} direction={small ? "column" : "row"} alignItems="center"
+                        justifyContent="space-between" sx={{ marginTop: "20px !important", width: "100%", }}>
+                        <Button onClick={() => filterProjects("Web")}
+                            sx={filterButtonStyle} variant="contained">WEB DEV</Button>
+                        <Button onClick={() => filterProjects("Games")}
+                            sx={filterButtonStyle} variant="outlined">GAME DEV</Button>
+                        <Button onClick={() => filterProjects("Techart")}
+                            sx={filterButtonStyle} variant="contained">TECH ART</Button>
+                        <Button onClick={() =>  window.open("https://www.artstation.com/josh-w-concept/albums/14822509", "_blank")}
+                            sx={filterButtonStyle} variant="contained">CONCEPT ART</Button>
 
+                    </Stack>
+                    <Fade in={show} >
+                        <Stack direction="row" alignItems="center" justifyContent="start"
+                            sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "10px",  }}>
+                            {visibleProjects.map(project => <Project
+                                key={project.name}
+                                name={project.name}
+                                subTitle={project.subTitle}
+                                image={project.image}
+                                description={project.description}
+                                keywords={project.keywords}
+                                codeLink={project.codeLink}
+                                viewLink={project.viewLink}
+                            />)}
+                        </Stack>
+                    </Fade>
+                </Stack >
             </Stack>
-            <Fade in={show} >
-                <Stack direction="row" alignItems="center" justifyContent="start"
-                    sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "20px",  }}>
-                    {visibleProjects.map(project => <Project
-                        key={project.name}
-                        name={project.name}
-                        subTitle={project.subTitle}
-                        image={project.image}
-                        description={project.description}
-                        keywords={project.keywords}
-                        codeLink={project.codeLink}
-                        viewLink={project.viewLink}
-                    />)}
-                </Stack>
-            </Fade>
-        </Stack >
+        </Stack>
     )
 }
 
