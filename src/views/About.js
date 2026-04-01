@@ -53,15 +53,7 @@ function About() {
 
                 <Fade in={showDesc}>
                     <div>
-                        <Typography align="center" sx={{
-                            fontSize: small ? "15px" : "15px",
-                            position: "relative", paddingLeft: small ? '30px' : '100px',
-                            paddingRight: small ? '30px' : '100px', paddingBottom: '20px',  
-                            fontWeight: "bold", color:colors.primaryLight,
-                            marginTop:"-10px",
-                        }}>
-                            WEB DEV  -  TECH ART  -  CONCEPT ART  -  GAME DEV
-                        </Typography>
+             
                         <Stack direction="row" spacing={4} align="center" alignItems="center" justifyContent="center" 
                             sx={{border:"1px solid grey", marginLeft:"5%",  marginRight:"5%"}}
                         >
