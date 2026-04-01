@@ -9,7 +9,7 @@ function Project(props) {
     let subTitleFlipFlop = true
     function getSubTitleLineShift(line) {
         subTitleFlipFlop = !subTitleFlipFlop
-        return (subTitleFlipFlop ? 1 : -1) * 30 * (line.length / 3)
+        return (subTitleFlipFlop ? 1 : -1) * 25 * (line.length / 3)
     }
 
     return (
@@ -18,54 +18,61 @@ function Project(props) {
             <Container
                 sx={{
                     zIndex: "0", position: "absolute", top: "10px",
-                    left: "20px", width: "400px", height: "550px", backgroundColor: colors.secondary,
-                    padding: "40px", borderRadius: '10px'
+                    left: "20px", width: "300px", height: "400px", backgroundColor: colors.primarySemiLight,
+                    padding: "20px", borderRadius: '1px'
                 }} />
             <Container
                 className="hoverBump"
                 sx={{
                     zIndex: "3",
                     position: "relative",
-                    width: "400px",
-                    height: "550px",
+                    width: "300px",
+                    height: "400px",
                     backgroundImage: `url(${props.image})`,
                     backgroundColor: "black",
-                    padding: "40px", borderRadius: '10px'
+                    padding: "20px", borderRadius: '1px',
                 }} >
+                
+                <Stack justifyContent={"space-between"} height={"100%"}>
+                    <Stack justifyContent={"flex-start"} >
+                        {props.subTitle.split("/").map(line =>
+                            <Typography align="left" variant="h5" key={line} sx={{
+                                fontSize: "18px",
+                                lineHeight: "17px",
+                                fontFamily: "inter",
+                                fontWeight: "bold",
+                                color: colors.secondaryLight
+                            }}>{line}</Typography>
+                        )}
 
-                {props.subTitle.split("/").map(line =>
-                    <Typography align="center" variant="h5" key={line} sx={{
-                        fontSize: "30px",
-                        lineHeight: "24px",
-                        fontFamily: "inter",
-                        fontWeight: "bold",
-                        marginLeft: `${getSubTitleLineShift(line)}px`,
-                        color: colors.secondaryLight
-                    }}>{line}</Typography>
-                )}
+                        {props.name.split("/").map(line => <Typography align="left" key={line} variant="h5" sx={{
+                            fontSize: '45px',
+                            letterSpacing: '-2px',
+                            fontFamily: "inter",
+                            fontWeight: "bold",
+                            marginBottom:"14px",
+                            color: colors.secondaryLight,
+                        }}>{line}</Typography>)}
 
-                {props.name.split("/").map(line => <Typography align="center" key={line} variant="h5" sx={{
-                    fontSize: '60px',
-                    letterSpacing: '-4px',
-                    fontFamily: "inter",
-                    fontWeight: "bold",
-                    color: colors.secondaryLight,
-                }}>{line}</Typography>)}
-
-                <Typography align="left" sx={{ color: colors.secondary, padding: "40px 40px 10px 40px" }}>
-                    {props.description}
-                </Typography>
-                <Typography align="left" sx={{ color: colors.secondary, padding: "10px 40px 0px 40px", }}>
-                    {props.keywords.join(", ")}
-                </Typography>
-                <Stack spacing={2} direction="row" alignItems="center" justifyContent="center"
-                    sx={{ position: "absolute", top: "430px", left: "79px" }}>
+                        <Typography align="left" sx={{ color: colors.secondary, marginBottom: "10px" }}>
+                            {props.description}
+                        </Typography>
+                        <Typography align="left" sx={{ color: colors.secondary, marginBottom: "20px"   }}>
+                            {props.keywords.join(", ")}
+                        </Typography>
+                </Stack>
+                <Stack spacing={1} direction="row" alignItems="center" justifyContent="space-between"
+                    sx={{borderRadius:"1px", width:"100%" }}>
                     <Button disabled={(props.codeLink === "")} target="_blank" href={props.codeLink}
-                        sx={{ textTransform: "unset", width: "100px", backgroundColor: "white", color: "black" }}
+                        sx={{ textTransform: "unset", backgroundColor: "white", color: "black",borderRadius:"1px", width:"100%" }}
                         variant="contained">code</Button>
+                    <Button disabled={(props.demoLink === "")} target="_blank" href={props.viewLink}
+                        sx={{ textTransform: "unset", backgroundColor: "white", color: "black",borderRadius:"1px", width:"100%" }}
+                        variant="contained">demo</Button>
                     <Button disabled={(props.viewLink === "")} target="_blank" href={props.viewLink}
-                        sx={{ textTransform: "unset", backgroundColor: "white", color: "black" }}
-                        variant="contained">see it in action</Button>
+                        sx={{ textTransform: "unset", backgroundColor: "white", color: "black",borderRadius:"1px", width:"100%" }}
+                        variant="contained">site</Button>
+                </Stack>
                 </Stack>
             </Container >
         </Container >

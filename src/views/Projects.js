@@ -8,8 +8,11 @@ import Fade from '@mui/material/Fade';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import constants from '../constants';
 import colors from '../styles/colors';
+import Container from '@mui/material/Container';
+
 
 function Projects() {
+    let stripeOffset = 200
     const projects = [
         new ProjectModel(
             "BDO GS",
@@ -86,7 +89,11 @@ function Projects() {
     ]
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
     const [visibleProjects, setVisProjects] = useState(projects)
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true)   
+    const filterButtonStyle = {
+        width: small ? "200px" : "200px", backgroundColor: colors.primaryLight,
+        textTransform: "unset", color:colors.primary, fontWeight:"bold", borderRadius:"1px"
+    }
 
     function filterProjects(filter) {
         setShow(false)
@@ -101,45 +108,43 @@ function Projects() {
     }
 
     return (
-        < Stack alignItems="center" justifyContent="center" spacing={10} sx={{ postion: "relative" }} >
-
-            <div style={{ position: "relative" }}>
-                <Typography sx={{
-                    position: "absolute", top: "4px", left: "4px", fontFamily: "inter",
-                    fontWeight: "bold", color: colors.primary, zIndex: "5", fontSize: small ? "50px" : "100px"
-                }}>PROJECTS</Typography>
-                <Typography sx={{
-                    position: "relative", fontFamily: "inter", fontWeight: "bold",
-                    color: colors.secondaryLight, zIndex: "5", fontSize: small ? "50px" : "100px"
-                }}>PROJECTS</Typography>
-            </div>
-            <Stack spacing={small ? 1 : 2} direction={small ? "column" : "row"} alignItems="center"
+        < Stack alignItems="center" justifyContent="center" spacing={1} sx={{ postion: "relative", backgroundColor: colors.primary }} >
+            {/* <Container id="blackStripe" maxWidth="false" sx={{
+                backgroundColor: colors.secondary,
+                height: '750px',
+                width: '3000px',
+                transform: 'rotate(12deg)',
+                position: 'absolute',
+                top: `${stripeOffset}px`,
+                left: '-600px'
+            }}>
+            </Container> */}
+            {/* <Container id="blackStripe" maxWidth="false" sx={{
+                backgroundColor: colors.primarySemiLight,
+                height: '600px',
+                width: '3000px',
+                transform: 'rotate(12deg)',
+                position: 'absolute',
+                top: `${stripeOffset + 50}px`,
+                left: '-600px'
+            }}>
+            </Container>
+      */}
+            <Stack spacing={small ? 1 : 1} direction={small ? "column" : "row"} alignItems="center"
                 justifyContent="center" sx={{ marginTop: "20px !important" }}>
                 <Button onClick={() => filterProjects("Web")}
-                    sx={{
-                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
-                        textTransform: "unset"
-                    }} variant="contained">web</Button>
+                    sx={filterButtonStyle} variant="contained">WEB DEV</Button>
                 <Button onClick={() => filterProjects("Games")}
-                    sx={{
-                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
-                        textTransform: "unset"
-                    }} variant="contained">games</Button>
-                <Button onClick={() => filterProjects("Native")}
-                    sx={{
-                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
-                        textTransform: "unset"
-                    }} variant="contained">native</Button>
-                <Button onClick={() => filterProjects("All")}
-                    sx={{
-                        width: small ? "200px" : "100px", backgroundColor: colors.primaryLight,
-                        textTransform: "unset"
-                    }} variant="contained">all</Button>
+                    sx={filterButtonStyle} variant="contained">GAME DEV</Button>
+                <Button onClick={() => filterProjects("Techart")}
+                    sx={filterButtonStyle} variant="contained">TECH ART</Button>
+                <Button onClick={() => filterProjects("Techart")}
+                    sx={filterButtonStyle} variant="contained">CONCEPT ART</Button>
 
             </Stack>
-            <Fade in={show}>
-                <Stack direction="row" alignItems="center" justifyContent="center"
-                    sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "40px" }}>
+            <Fade in={show} >
+                <Stack direction="row" alignItems="center" justifyContent="start"
+                    sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "20px",  }}>
                     {visibleProjects.map(project => <Project
                         key={project.name}
                         name={project.name}
