@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import EmailIcon from '@mui/icons-material/Email';
 import CodeIcon from '@mui/icons-material/Code';
-import PhoneIcon from '@mui/icons-material/Phone';
 import WorkIcon from '@mui/icons-material/Work';
 import { useState } from 'react';
 import Fade from '@mui/material/Fade';
@@ -36,26 +35,18 @@ function About() {
 
     return (
         <Stack sx={{
-            width: '50%', marginTop: '150px'
+            width: '50%', marginTop: '70px'
         }} spacing={2} alignItems="center" justifyContent="center" >
             <div>
                 <Fade in={showWelcome}>
                     <Container sx={{ position: "relative", width: "fit-content" }} >
                         <Typography variant='h1' align="center" sx={
                             {
-                                fontSize: small ? "80px" : "180px", color: "white",
-                                letterSpacing: small ? '-10px' : '-20px', fontFamily: "inter", fontWeight: "bold"
+                                fontSize: small ? "40px" : "120px", color: "white",
+                                letterSpacing: small ? '-10px' : '-10px', fontFamily: "inter", fontWeight: "bold"
                             }}
                         >
-                            WELCOME
-                        </Typography>
-                        <Typography variant='h1' align="center"
-                            sx={{
-                                color: colors.primaryLight, fontSize: small ? "80px" : "180px",
-                                position: 'absolute', left: '20px', top: '-5px',
-                                letterSpacing: small ? '-10px' : '-20px', fontFamily: "inter", fontWeight: "bold"
-                            }}>
-                            WELCOME
+                            JOSH WONG
                         </Typography>
                     </Container>
                 </Fade>
@@ -63,55 +54,47 @@ function About() {
                 <Fade in={showDesc}>
                     <div>
                         <Typography align="center" sx={{
-                            fontSize: small ? "15px" : "18px",
+                            fontSize: small ? "15px" : "15px",
                             position: "relative", paddingLeft: small ? '30px' : '100px',
-                            paddingRight: small ? '30px' : '100px', paddingBottom: '20px'
+                            paddingRight: small ? '30px' : '100px', paddingBottom: '20px',  
+                            fontWeight: "bold", color:colors.primaryLight,
+                            marginTop:"-10px",
                         }}>
-                            If you're looking for a developer who loves web and game development,
-                            enjoys learning new architectures and design
-                            patterns and has an eye for design and skill in illustration, you've come to the right place!
+                            WEB DEV  -  TECH ART  -  CONCEPT ART  -  GAME DEV
                         </Typography>
-                        <Stack direction="row" spacing={4} align="center" alignItems="center" justifyContent="center" >
+                        <Stack direction="row" spacing={4} align="center" alignItems="center" justifyContent="center" 
+                            sx={{border:"1px solid grey", marginLeft:"5%",  marginRight:"5%"}}
+                        >
                             {small ? "" : <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
                                 <IconButton disabled sx={small ? { width: '10px', height: '10px' } : {}}>
-                                    <EmailIcon />
+                                    <EmailIcon sx ={{ color: colors.primaryLight }}/>
                                 </IconButton>
                                 <Typography align="center" display='flex' alignItems="center" color={colors.primaryLight} >
-                                    JYUENW@gmail.com
-                                </Typography>
-                            </Stack>}
-
-                                
-                            {small ? "" : <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
-                                <IconButton disabled sx={small ? { width: '10px', height: '10px' } : {}}>
-                                    <PhoneIcon />
-                                </IconButton>
-                                <Typography align="center" display='flex' alignItems="center" color={colors.primaryLight} >
-                                    -
+                                    Josh.w.code@gmail.com
                                 </Typography>
                             </Stack>}
                                 
                             <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
-                                <IconButton href="https://github.com/jyw2" target="_blank"
+                                <IconButton href="https://github.com/jyw2" target="_blank"  
                                     sx={small ? { width: '10px', height: '10px' } : {}}>
-                                    <CodeIcon />
+                                    <CodeIcon sx ={{ color: colors.primaryLight }}/>
                                 </IconButton>
                                 <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"
                                     style={{ cursor: "pointer" }} onClick={handleGitClick}>
-                                    github
+                                    Github
                                 </Typography>
                             </Stack>
 
-                            <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
+                            <Stack paddingRight={3} sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
                                 <IconButton href="https://www.linkedin.com/in/jyw2/" target="_blank"
                                     sx={small ? { width: '10px', height: '10px' } : {}}>
-                                    <WorkIcon />
+                                    <WorkIcon sx ={{ color: colors.primaryLight }}/>
                                 </IconButton>
                                 <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"
                                     style={{ cursor: "pointer" }} onClick={handleLinkedInClick}>
-                                    linkedIn
+                                    LinkedIn
                                 </Typography>
                             </Stack>
                         </Stack >

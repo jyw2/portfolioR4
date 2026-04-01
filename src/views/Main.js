@@ -32,16 +32,16 @@ function Main() {
                     height: '100%', width: '100%'
                 }}>
 
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                    {/* <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
                         style={{
-                            minWidth: "1400px", top: small ? '-200px' : '0px',
+                            minWidth: "1400px", top: small ? '-200px' : '-100px',
                             left: '0px', position: 'absolute', zIndex: '0',
                         }} >
                         <circle cx="70" cy="25" r="20" fill={colors.tertiary} />
                         <circle cx="10" cy="40" r="14" fill={colors.tertiary} />
                         <polygon points="100,0 80,25 150,75 200,0" fill={colors.tertiary} />
                         <rect x="14" y="17" width="100" fill={colors.tertiary} height="40" />
-                    </svg>
+                    </svg> */}
                     <div id="midground" className="layer"
                         style={{
                             backgroundColor: colors.tertiary, zIndex: "0",

@@ -3,7 +3,7 @@ const colors = {
     tertiary: "#7fc6f0",
     primary: "#000000",
     primarySemiLight: "#111111",
-    primaryLight: "#222222",
+    primaryLight: "#c4c3be",
     secondary: "#F0EEE9",
     secondaryLight: "#FFFFFF",
     grey: "#757575"
