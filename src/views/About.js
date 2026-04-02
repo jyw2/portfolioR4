@@ -15,7 +15,8 @@ import constants from '../constants';
 function About() {
 
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
-
+    const iconStyle = {  marginRight:"-10px" }
+    
     function handleGitClick() {
         window.open("https://github.com/jyw2")
     }
@@ -39,14 +40,22 @@ function About() {
         }} spacing={2} alignItems="center" justifyContent="center" >
             <div>
                 <Fade in={showWelcome}>
-                    <Container sx={{ position: "relative", width: "fit-content" }} >
+                    <Container sx={{ position: "relative", width: "fit-content", display:"flex" }} >
                         <Typography variant='h1' align="center" sx={
                             {
                                 fontSize: small ? "40px" : "120px", color: "white",
+                                letterSpacing: small ? '-10px' : '-10px', fontFamily: "inter", fontWeight: "bold", paddingRight:"20px"
+                            }}
+                        >
+                            JOSH
+                        </Typography>
+                        <Typography variant='h1' align="center" sx={
+                            {
+                                fontSize: small ? "40px" : "120px", color: '#e0db31', 
                                 letterSpacing: small ? '-10px' : '-10px', fontFamily: "inter", fontWeight: "bold"
                             }}
                         >
-                            JOSH WONG
+                            WONG
                         </Typography>
                     </Container>
                 </Fade>
@@ -55,10 +64,10 @@ function About() {
                     <div>
              
                         <Stack direction="row" spacing={4} align="center" alignItems="center" justifyContent="center" 
-                            sx={{border:"1px solid grey", marginLeft:"7%",  marginRight:"7%"}}
+                            sx={{border:"1px solid grey", marginLeft:"5%",  marginRight:"5%", marginTop:"-10px"}}
                         >
                             {small ? "" : <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
-                                <IconButton disabled sx={small ? { width: '10px', height: '10px' } : {}}>
+                                <IconButton disabled sx={small ? {}: iconStyle}>
                                     <EmailIcon sx ={{ color: colors.primaryLight }}/>
                                 </IconButton>
                                 <Typography align="center" display='flex' alignItems="center" color={colors.primaryLight} >
@@ -69,7 +78,7 @@ function About() {
                             <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
                                 <IconButton href="https://github.com/jyw2" target="_blank"  
-                                    sx={small ? { width: '10px', height: '10px' } : {}}>
+                                    sx={small ? {}: iconStyle}>
                                     <CodeIcon sx ={{ color: colors.primaryLight }}/>
                                 </IconButton>
                                 <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"
@@ -81,7 +90,7 @@ function About() {
                             <Stack paddingRight={3} sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
                                 <IconButton href="https://www.linkedin.com/in/jyw2/" target="_blank"
-                                    sx={small ? { width: '10px', height: '10px' } : {}}>
+                                    sx={small ? {}: iconStyle}>
                                     <WorkIcon sx ={{ color: colors.primaryLight }}/>
                                 </IconButton>
                                 <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"

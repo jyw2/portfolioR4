@@ -3,16 +3,25 @@ import Project from './Project';
 import ProjectModel from '../models/projectModel';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Fade from '@mui/material/Fade';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import constants from '../constants';
 import colors from '../styles/colors';
-import Container from '@mui/material/Container';
-
+import { useParams } from "react-router";
+import { useNavigate } from "react-router";
+import { createTheme, ThemeProvider, } from '@mui/material/styles';
 
 function Projects() {
-    let stripeOffset = 200
+    let { category } = useParams();
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#e0db31'
+            }
+        }
+      });
+
     const projects = [
         new ProjectModel(
             "BDO GS",
@@ -81,18 +90,24 @@ function Projects() {
             "https://imgur.com/VewIDOU.jpg",
             `Chain model generating tool for Maya. Allows you to vary length and thickness of the chain. 
             Built with Python.`,
-            ["Games", "Maya", "Python", "3D", "Solo"],
+            ["Techart","Games", "Maya", "Python", "3D", "Solo"],
             "https://github.com/jyw2/Maya-Python-Programs",
             "https://youtu.be/QkdLPGBiFKc"
         ),
 
     ]
+
+    let navigate = useNavigate();
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
-    const [visibleProjects, setVisProjects] = useState(projects)
+    const [visibleProjects, setVisProjects] = useState([])
     const [show, setShow] = useState(true)   
-    const filterButtonStyle = {
-        width: small ? "200px" : "100%", backgroundColor: colors.secondary,
-        textTransform: "unset", color:colors.primary, fontWeight:"bold", borderRadius:"1px"
+
+    const filterButtonStyleCommon = {
+        width: small ? "200px" : "100%", fontSize:"15px", height:"50px",
+        textTransform: "unset", fontWeight:"bold", borderRadius:"1px"
+    }
+    const filterButtonStyleSelected = {
+        ...filterButtonStyleCommon,
     }
 
     function filterProjects(filter) {
@@ -101,70 +116,63 @@ function Projects() {
             if (filter === "All") {
                 setVisProjects(projects)
             } else {
-                setVisProjects(projects.filter(project => project.keywords.find(keyword => keyword === filter)))
+                setVisProjects(projects.filter(project => project.keywords.find(keyword => keyword.toLowerCase() === filter.toLowerCase())))
             }
             setShow(true)
         }, 300)
     }
+    useEffect(() => filterProjects(category), [category])
 
     return (
-        <Stack backgroundColor={colors.primarySemiLight} width={"100%"} paddingTop={"10px"} paddingBottom={"10px"}>
-            <Stack sx= {{backgroundColor: colors.primarySemiLight, width:"100%", justifyContent:"center", alignItems:"center"}}>
-                < Stack alignItems="center" justifyContent="center" spacing={3} sx={{
-                    postion: "relative",  paddingTop:"20px", paddingBottom:"20px",
-                    width:"fit-content"
-                }} >
-                    {/* <Container id="blackStripe" maxWidth="false" sx={{
-                        backgroundColor: colors.secondary,
-                        height: '750px',
-                        width: '3000px',
-                        transform: 'rotate(12deg)',
-                        position: 'absolute',
-                        top: `${stripeOffset}px`,
-                        left: '-600px'
-                    }}>
-                    </Container> */}
-                    {/* <Container id="blackStripe" maxWidth="false" sx={{
-                        backgroundColor: colors.primarySemiLight,
-                        height: '600px',
-                        width: '3000px',
-                        transform: 'rotate(12deg)',
-                        position: 'absolute',
-                        top: `${stripeOffset + 50}px`,
-                        left: '-600px'
-                    }}>
-                    </Container>
-            */}
-                    <Stack spacing={small ? 1 : 1} direction={small ? "column" : "row"} alignItems="center"
-                        justifyContent="space-between" sx={{ marginTop: "20px !important", width: "100%", }}>
-                        <Button onClick={() => filterProjects("Web")}
-                            sx={filterButtonStyle} variant="contained">WEB DEV</Button>
-                        <Button onClick={() => filterProjects("Games")}
-                            sx={filterButtonStyle} variant="outlined">GAME DEV</Button>
-                        <Button onClick={() => filterProjects("Techart")}
-                            sx={filterButtonStyle} variant="contained">TECH ART</Button>
-                        <Button onClick={() =>  window.open("https://www.artstation.com/josh-w-concept/albums/14822509", "_blank")}
-                            sx={filterButtonStyle} variant="contained">CONCEPT ART</Button>
+        <ThemeProvider theme={theme}>
+            <Stack backgroundColor={colors.primarySemiLight} width={"100%"} paddingTop={"10px"} paddingBottom={"10px"}>
+                <Stack sx= {{backgroundColor: colors.primarySemiLight, width:"100%", justifyContent:"center", alignItems:"center"
+                }}> 
+                    < Stack alignItems="center" justifyContent="center" spacing={3} sx={{
+                        postion: "relative",  paddingTop:"20px", paddingBottom:"20px", paddingRight:"10%",paddingLeft:"10%",
+                        maxWidth:"1310px", width:"100%"
+                    }} >
+                        <Stack spacing={0.5} direction={small ? "column" : "row"} alignItems="center"
+                            justifyContent="space-between" sx={{ marginTop: "20px !important", width: "100%", marginBottom:"-10px" }}>
+                            <Button onClick={() => navigate("/web")}
+                                sx={category === "web"? filterButtonStyleSelected: filterButtonStyleCommon} 
+                                variant={category === "web"? "contained":"outlined"}>
+                                    WEB DEV
+                            </Button>
+                            <Button onClick={() => navigate("/techart")}
+                                sx={category === "techart"? filterButtonStyleSelected: filterButtonStyleCommon} 
+                                variant={category === "techart"? "contained":"outlined"}>
+                                    TECH ART
+                            </Button>
+                            <Button onClick={() => navigate("/games")}
+                                sx={category === "games"? filterButtonStyleSelected: filterButtonStyleCommon} 
+                                variant={category === "games"? "contained":"outlined"}>
+                                    GAME DEV
+                            </Button>
+                            <Button onClick={() =>  window.open("https://www.artstation.com/josh-w-concept/albums/14822509", "_blank")}
+                                sx={filterButtonStyleCommon} variant="outlined">CONCEPT ART</Button>
 
-                    </Stack>
-                    <Fade in={show} >
-                        <Stack direction="row" alignItems="center" justifyContent="start"
-                            sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "10px",  }}>
-                            {visibleProjects.map(project => <Project
-                                key={project.name}
-                                name={project.name}
-                                subTitle={project.subTitle}
-                                image={project.image}
-                                description={project.description}
-                                keywords={project.keywords}
-                                codeLink={project.codeLink}
-                                viewLink={project.viewLink}
-                            />)}
                         </Stack>
-                    </Fade>
-                </Stack >
+                        <Fade in={show} >
+                            <Stack direction="row" alignItems="center" justifyContent="start"
+                                sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "10px",paddingLeft:"0px"  }}>
+                                {visibleProjects.map(project => <Project
+                                    key={project.name}
+                                    name={project.name}
+                                    subTitle={project.subTitle}
+                                    image={project.image}
+                                    description={project.description}
+                                    keywords={project.keywords}
+                                    codeLink={project.codeLink}
+                                    viewLink={project.viewLink}
+                                />)}
+                            </Stack>
+                        </Fade>
+                    </Stack >
+                </Stack>
             </Stack>
-        </Stack>
+</ThemeProvider>
+
     )
 }
 

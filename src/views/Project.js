@@ -14,12 +14,12 @@ function Project(props) {
 
     return (
         <Container
-            sx={{ position: "relative", width: "fit-content", margin: '20px', zIndex: "6" }} disableGutters>
+            sx={{ position: "relative", width: "fit-content", margin: '20px', zIndex: "6", marginLeft:"0px", }} disableGutters>
             <Container
                 sx={{
                     zIndex: "0", position: "absolute", top: "10px",
                     left: "20px", width: "300px", height: "400px", backgroundColor: colors.primary,
-                    padding: "20px", borderRadius: '1px'
+                    padding: "20px",  borderRadius: '1px'
                 }} />
             <Container
                 className="hoverBump"
@@ -32,6 +32,10 @@ function Project(props) {
                     backgroundColor: "black",
                     padding: "20px", borderRadius: '1px',
                 }} >
+                <Container sx={{
+                    position:'absolute',
+                    color:'black'
+                }}/>
                 
                 <Stack justifyContent={"space-between"} height={"100%"}>
                     <Stack justifyContent={"flex-start"} >
@@ -63,13 +67,13 @@ function Project(props) {
                 </Stack>
                 <Stack spacing={1} direction="row" alignItems="center" justifyContent="space-between"
                     sx={{borderRadius:"1px", width:"100%" }}>
-                    <Button disabled={(props.codeLink === "")} target="_blank" href={props.codeLink}
+                    <Button disabled={(!props.codeLink)} target="_blank" href={props.codeLink}
                         sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
                         variant="contained">code</Button>
-                    <Button disabled={(props.demoLink === "")} target="_blank" href={props.viewLink}
+                    <Button disabled={(!props.demoLink)} target="_blank" href={props.viewLink}
                         sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
                         variant="contained">demo</Button>
-                    <Button disabled={(props.viewLink === "")} target="_blank" href={props.viewLink}
+                    <Button disabled={(!props.viewLink)} target="_blank" href={props.viewLink}
                         sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
                         variant="contained">site</Button>
                 </Stack>

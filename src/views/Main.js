@@ -18,26 +18,18 @@ function Main() {
 
     return (
         <ThemeProvider theme={defaultTheme}>
-            <div style={{ height: "fit-content", position: "relative", overflowX: "hidden" }}>
-
-
+            <div style={{ height: "fit-content", minHeight:"100vh", position: "relative", overflowX: "hidden"}}>
+                <section id="background"
+                    style={{
+                        width: "100%", height: "100%",backgroundColor:"black",
+                        zIndex: "-2"
+                    }} className="layer" />
                 <section id="background"
                     style={{
                         width: "100%", height: "100%", backgroundImage: `url(${bgLink})`,
                         backgroundSize: 'contain', zIndex: "-1"
                     }} className="layer" />
-
-                <div style={{
-                    position: 'relative', backgroundColor: colors.accent,
-                    height: '100%', width: '100%'
-                }}>
-                    <div id="midground" className="layer"
-                        style={{
-                            backgroundColor: colors.tertiary, zIndex: "0",
-                            width: '100%', position: 'relative'
-                        }}>
-                    </div>
-                </div>
+           
 
                 <Stack sx={{ zIndex: "4",paddingBottom:"80px" }} alignItems="center" spacing={10}
                     justifyContent="center" ref={contentRef}>
