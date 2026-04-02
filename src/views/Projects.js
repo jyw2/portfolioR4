@@ -34,8 +34,8 @@ function Projects() {
             "Blender script to export both a transparent lineart and a render layer for a 3D model.",
             ["Techart", "Blender", "Python"],
             null,
-            'https://grindspot.jyuenw.com/',
-            'https://www.ironsight.app/'
+            'https://www.ironsight.app/',
+            null,
         ),
         new ProjectModel(
             "QUICK LINEART",
@@ -60,18 +60,18 @@ function Projects() {
         new ProjectModel(
             "IRONSIGHT",
             "OIL TRUCKING/MANAGEMENT/WEB APP",
-            '/src/assets/project-backgrounds/lex-lab.png',
+            '/project_images/ironsight.png',
             "Vue full stack web app for " +
             "managing oil trucking and related " + "industry tasks.",
             ["Web", "Vue", "SQL", ".NET", "Azure", "Integrations", "Team"],
             null,
-            'https://grindspot.jyuenw.com/',
-            'https://www.ironsight.app/'
+            'https://www.ironsight.app/',
+            null
         ),
         new ProjectModel(
             "COMBO CENTRAL",
-            "STREET FIGHTER/COMBO SHARING/WEBSITE",
-            '/src/assets/project-backgrounds/lex-lab.png',
+            "STREET FIGHTER/COMBO SHARING/WEB APP",
+            '/project_images/combo_central.png',
             "Full stack web app to create and " +
             "share combos featuring accounts " + "and CRUD.",
             ["Web", "React", "Firebase", "MongoDB", "Solo"],
@@ -81,7 +81,7 @@ function Projects() {
         new ProjectModel(
             "LEXICON LABYRINTH",
             "WEB BASED/MULTIPLAYER/PUZZLE GAME",
-            '/src/assets/project-backgrounds/lex-lab.png',
+            '/project_images/lex_lab.png',
             "React based browser puzzle game " +
             "with online multiplayer and bots.",
             ["Web", "Games", "React", "Networks", "JavaScript", "Team"],
@@ -91,7 +91,7 @@ function Projects() {
         new ProjectModel(
             "BDO GS",
             "MMORPG/TRACKER/UTILITY",
-            "https://i.imgur.com/j4YKlRu.png",
+            '/project_images/gs.png',
             "Angular based web app that " +
             "records and shares your " +
             "gameplay sessions or 'grinds'.",
@@ -102,7 +102,7 @@ function Projects() {
         new ProjectModel(
             "One + One",
             "GESTURE/DRAWING/TOOL",
-            "https://imgur.com/T1GcULm.jpg",
+            '/project_images/one_plus_one.png',
             `Electron based gesture drawing assistant app created using electron.`,
             ["Web", "Electron", "React", "Solo"],
             'https://github.com/jyw2/onePlusOne',
@@ -111,7 +111,7 @@ function Projects() {
         new ProjectModel(
             "Creddi.io",
             "CANTEEN/CREDIT/SYSTEM",
-            "https://imgur.com/Nx6BIv5.jpg",
+            '/project_images/creddi.png',
             `React based web app for keeping 
             track of the Computer Engineering 
             club's snack tabs.`,
@@ -155,7 +155,7 @@ function Projects() {
             setShow(true)
         }, 300)
     }
-    useEffect(() => filterProjects(category), [category])
+    useEffect(() => filterProjects(category? category: "web"), [category])
 
     return (
         <ThemeProvider theme={theme}>
