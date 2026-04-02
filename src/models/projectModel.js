@@ -16,7 +16,7 @@ class ProjectModel {
         this.keywords = keywords
         this.codeLink = codeLink
         this.viewLink = viewLink
-        this.demoLink = demoLink
+        this.demoLink = demoLink 
     }
 }
 

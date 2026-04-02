@@ -28,24 +28,14 @@ function Projects() {
 
     const projects = [
         new ProjectModel(
-            "QUICK EXPORT",
-            "BLENDER/CONCEPT ART/EXPORT SCRIPT",
-            '/src/assets/project-backgrounds/lex-lab.png',
-            "Blender script to export both a transparent lineart and a render layer for a 3D model.",
-            ["Techart", "Blender", "Python"],
-            null,
-            'https://www.ironsight.app/',
-            null,
-        ),
-        new ProjectModel(
             "QUICK LINEART",
-            "BLENDER/LINE ART/SCRIPT",
+            "BLENDER/LINE ART/SCRIPT \\ TOOL",
             '/src/assets/project-backgrounds/lex-lab.png',
-            "Blender script to apply variable weight lineart to a 3D model.",
+            "Blender scripts to add dynamic lineart and export both a transparent line and a render layer.",
             ["Techart", "Blender", "Python"],
-            null,
-            'https://grindspot.jyuenw.com/',
-            'https://www.ironsight.app/'
+            "",
+            '',
+            ''
         ),
         new ProjectModel(
             "ARRAY CLONE",
@@ -53,9 +43,9 @@ function Projects() {
             '/src/assets/project-backgrounds/lex-lab.png',
             "Photoshop plugin to clone a layer in a line along an angled axis.",
             ["Techart", "Photoshop", "JavaScript"],
-            null,
-            'https://grindspot.jyuenw.com/',
-            'https://www.ironsight.app/'
+            "",
+            '',
+            ''
         ),
         new ProjectModel(
             "IRONSIGHT",
@@ -64,9 +54,9 @@ function Projects() {
             "Vue full stack web app for " +
             "managing oil trucking and related " + "industry tasks.",
             ["Web", "Vue", "SQL", ".NET", "Azure", "Integrations", "Team"],
-            null,
+            "",
             'https://www.ironsight.app/',
-            null
+            ""
         ),
         new ProjectModel(
             "COMBO CENTRAL",
@@ -75,8 +65,9 @@ function Projects() {
             "Full stack web app to create and " +
             "share combos featuring accounts " + "and CRUD.",
             ["Web", "React", "Firebase", "MongoDB", "Solo"],
-            'https://github.com/ece493/lexicon-labyrinth',
-            'https://grindspot.jyuenw.com/',
+            "",
+            "",
+            ""
         ),
         new ProjectModel(
             "LEXICON LABYRINTH",
@@ -86,7 +77,8 @@ function Projects() {
             "with online multiplayer and bots.",
             ["Web", "Games", "React", "Networks", "JavaScript", "Team"],
             'https://github.com/ece493/lexicon-labyrinth',
-            'https://grindspot.jyuenw.com/',
+            "",
+            ""
         ),
         new ProjectModel(
             "BDO GS",
@@ -97,6 +89,7 @@ function Projects() {
             "gameplay sessions or 'grinds'.",
             ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase", "Solo"],
             'https://github.com/jyw2/grindSpot',
+            "",
             'https://grindspot.jyuenw.com/',
         ),
         new ProjectModel(
@@ -106,7 +99,8 @@ function Projects() {
             `Electron based gesture drawing assistant app created using electron.`,
             ["Web", "Electron", "React", "Solo"],
             'https://github.com/jyw2/onePlusOne',
-            'https://www.youtube.com/watch?v=uiyajTV66Rw',
+            "asdasdas",
+            "https://www.youtube.com/watch?v=uiyajTV66Rw"
         ),
         new ProjectModel(
             "Creddi.io",
@@ -122,10 +116,11 @@ function Projects() {
         new ProjectModel(
             "Chain Gen",
             "CHAIN/MODEL/GENERATOR",
-            "https://imgur.com/VewIDOU.jpg",
+            '/project_images/chain.png',
             `Chain model generating tool for Maya. Allows you to vary length and thickness of the chain.`,
             ["Techart", "Maya", "Python", "3D", "Solo"],
             "https://github.com/jyw2/Maya-Python-Programs",
+            "",
             "https://youtu.be/QkdLPGBiFKc"
         ),
 
@@ -155,7 +150,7 @@ function Projects() {
             setShow(true)
         }, 300)
     }
-    useEffect(() => filterProjects(category? category: "web"), [category])
+    useEffect(() => filterProjects(category ? category : "web"), [category])
 
     return (
         <ThemeProvider theme={theme}>
@@ -200,6 +195,7 @@ function Projects() {
                                     keywords={project.keywords}
                                     codeLink={project.codeLink}
                                     viewLink={project.viewLink}
+                                    demoLink={project.demoLink}
                                 />)}
                             </Stack>
                         </Fade>

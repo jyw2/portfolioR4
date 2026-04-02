@@ -80,12 +80,12 @@ function Project(props) {
                     <Button disabled={(!props.codeLink)} target="_blank" href={props.codeLink}
                         sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
                         variant="contained">code</Button>
-                    <Button disabled={(!props.demoLink)} target="_blank" href={props.viewLink}
-                        sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
-                        variant="contained">demo</Button>
                     <Button disabled={(!props.viewLink)} target="_blank" href={props.viewLink}
                         sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
                         variant="contained">site</Button>
+                    <Button disabled={(!props.demoLink)} target="_blank" href={props.demoLink}
+                        sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
+                        variant="contained">demo</Button>
                 </Stack>
                 </Stack>
                 
