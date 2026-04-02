@@ -18,11 +18,76 @@ function Projects() {
         palette: {
             primary: {
                 main: '#e0db31'
+            },
+            action: {
+                disabledBackground: '#404040',
+                disabled: '#292929'
             }
         }
-      });
+    });
 
     const projects = [
+        new ProjectModel(
+            "QUICK EXPORT",
+            "BLENDER/CONCEPT ART/EXPORT SCRIPT",
+            '/src/assets/project-backgrounds/lex-lab.png',
+            "Blender script to export both a transparent lineart and a render layer for a 3D model.",
+            ["Techart", "Blender", "Python"],
+            null,
+            'https://grindspot.jyuenw.com/',
+            'https://www.ironsight.app/'
+        ),
+        new ProjectModel(
+            "QUICK LINEART",
+            "BLENDER/LINE ART/SCRIPT",
+            '/src/assets/project-backgrounds/lex-lab.png',
+            "Blender script to apply variable weight lineart to a 3D model.",
+            ["Techart", "Blender", "Python"],
+            null,
+            'https://grindspot.jyuenw.com/',
+            'https://www.ironsight.app/'
+        ),
+        new ProjectModel(
+            "ARRAY CLONE",
+            "PHOTOSHOP/ARRAY LAYER/PLUGIN",
+            '/src/assets/project-backgrounds/lex-lab.png',
+            "Photoshop plugin to clone a layer in a line along an angled axis.",
+            ["Techart", "Photoshop", "JavaScript"],
+            null,
+            'https://grindspot.jyuenw.com/',
+            'https://www.ironsight.app/'
+        ),
+        new ProjectModel(
+            "IRONSIGHT",
+            "OIL TRUCKING/MANAGEMENT/WEB APP",
+            '/src/assets/project-backgrounds/lex-lab.png',
+            "Vue full stack web app for " +
+            "managing oil trucking and related " + "industry tasks.",
+            ["Web", "Vue", "SQL", ".NET", "Azure", "Integrations", "Team"],
+            null,
+            'https://grindspot.jyuenw.com/',
+            'https://www.ironsight.app/'
+        ),
+        new ProjectModel(
+            "COMBO CENTRAL",
+            "STREET FIGHTER/COMBO SHARING/WEBSITE",
+            '/src/assets/project-backgrounds/lex-lab.png',
+            "Full stack web app to create and " +
+            "share combos featuring accounts " + "and CRUD.",
+            ["Web", "React", "Firebase", "MongoDB", "Solo"],
+            'https://github.com/ece493/lexicon-labyrinth',
+            'https://grindspot.jyuenw.com/',
+        ),
+        new ProjectModel(
+            "LEXICON LABYRINTH",
+            "WEB BASED/MULTIPLAYER/PUZZLE GAME",
+            '/src/assets/project-backgrounds/lex-lab.png',
+            "React based browser puzzle game " +
+            "with online multiplayer and bots.",
+            ["Web", "Games", "React", "Networks", "JavaScript", "Team"],
+            'https://github.com/ece493/lexicon-labyrinth',
+            'https://grindspot.jyuenw.com/',
+        ),
         new ProjectModel(
             "BDO GS",
             "MMORPG/TRACKER/UTILITY",
@@ -38,8 +103,8 @@ function Projects() {
             "One + One",
             "GESTURE/DRAWING/TOOL",
             "https://imgur.com/T1GcULm.jpg",
-            `Native desktop gesture drawing assistant app created using electron.`,
-            ["Native", "Electron", "React", "Solo"],
+            `Electron based gesture drawing assistant app created using electron.`,
+            ["Web", "Electron", "React", "Solo"],
             'https://github.com/jyw2/onePlusOne',
             'https://www.youtube.com/watch?v=uiyajTV66Rw',
         ),
@@ -55,42 +120,11 @@ function Projects() {
             "https://creddi.compeclub.com/",
         ),
         new ProjectModel(
-            "Comm Site",
-            "ILLUSTRATION/COMMISSION/SITE",
-            "https://imgur.com/r9dHJFp.jpg",
-            `Angular based site for my illustration commissions. Features a filtered gallery 
-            and price estimator.`,
-            ["Web", "Angular", "UI/UX", "MongoDB", "Illustration", "Solo"],
-            "https://github.com/jyw2/comSiteRev4",
-            "https://comsite.jyuenw.com/",
-        ),
-        new ProjectModel(
-            "Mood Trckr",
-            "MOOD/TRACKING/APP",
-            "https://imgur.com/wG5zDxG.jpg",
-            `Android mood tracking app centered around neural network predictions. 
-            Only the phase one data collection app was completed.`,
-            ["Native", "Android", "Team"],
-            "https://github.com/MoodTrkr/android-volunteer",
-            ""
-        ),
-        new ProjectModel(
-            "Portfolio",
-            "LEGACY/PORTFOLIO/WEBSITE",
-            "https://imgur.com/l6LgiPd.jpg",
-            `Old portfolio website from 2020. Built with Angular.
-             Features a gallery and in-depth walk-throughs of projects.`,
-            ["Web", "Angular", "Solo"],
-            "https://github.com/jyw2/portfolio",
-            "https://legacyportfolio.jyuenw.com/"
-        ),
-        new ProjectModel(
             "Chain Gen",
             "CHAIN/MODEL/GENERATOR",
             "https://imgur.com/VewIDOU.jpg",
-            `Chain model generating tool for Maya. Allows you to vary length and thickness of the chain. 
-            Built with Python.`,
-            ["Techart","Games", "Maya", "Python", "3D", "Solo"],
+            `Chain model generating tool for Maya. Allows you to vary length and thickness of the chain.`,
+            ["Techart", "Maya", "Python", "3D", "Solo"],
             "https://github.com/jyw2/Maya-Python-Programs",
             "https://youtu.be/QkdLPGBiFKc"
         ),
@@ -100,11 +134,11 @@ function Projects() {
     let navigate = useNavigate();
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
     const [visibleProjects, setVisProjects] = useState([])
-    const [show, setShow] = useState(true)   
+    const [show, setShow] = useState(true)
 
     const filterButtonStyleCommon = {
-        width: small ? "200px" : "100%", fontSize:"15px", height:"50px",
-        textTransform: "unset", fontWeight:"bold", borderRadius:"1px"
+        width: small ? "200px" : "100%", fontSize: "15px", height: "50px",
+        textTransform: "unset", fontWeight: "bold", borderRadius: "1px"
     }
     const filterButtonStyleSelected = {
         ...filterButtonStyleCommon,
@@ -126,36 +160,37 @@ function Projects() {
     return (
         <ThemeProvider theme={theme}>
             <Stack backgroundColor={colors.primarySemiLight} width={"100%"} paddingTop={"10px"} paddingBottom={"10px"}>
-                <Stack sx= {{backgroundColor: colors.primarySemiLight, width:"100%", justifyContent:"center", alignItems:"center"
-                }}> 
+                <Stack sx={{
+                    backgroundColor: colors.primarySemiLight, width: "100%", justifyContent: "center", alignItems: "center"
+                }}>
                     < Stack alignItems="center" justifyContent="center" spacing={3} sx={{
-                        postion: "relative",  paddingTop:"20px", paddingBottom:"20px", paddingRight:"10%",paddingLeft:"10%",
-                        maxWidth:"1310px", width:"100%"
+                        postion: "relative", paddingTop: "20px", paddingBottom: "20px", paddingRight: "10%", paddingLeft: "10%",
+                        maxWidth: "1310px", width: "100%"
                     }} >
                         <Stack spacing={0.5} direction={small ? "column" : "row"} alignItems="center"
-                            justifyContent="space-between" sx={{ marginTop: "20px !important", width: "100%", marginBottom:"-10px" }}>
+                            justifyContent="space-between" sx={{ marginTop: "20px !important", width: "100%", marginBottom: "-10px" }}>
                             <Button onClick={() => navigate("/web")}
-                                sx={category === "web"? filterButtonStyleSelected: filterButtonStyleCommon} 
-                                variant={category === "web"? "contained":"outlined"}>
-                                    WEB DEV
+                                sx={category === "web" ? filterButtonStyleSelected : filterButtonStyleCommon}
+                                variant={category === "web" ? "contained" : "outlined"}>
+                                WEB DEV
                             </Button>
                             <Button onClick={() => navigate("/techart")}
-                                sx={category === "techart"? filterButtonStyleSelected: filterButtonStyleCommon} 
-                                variant={category === "techart"? "contained":"outlined"}>
-                                    TECH ART
+                                sx={category === "techart" ? filterButtonStyleSelected : filterButtonStyleCommon}
+                                variant={category === "techart" ? "contained" : "outlined"}>
+                                TECH ART
                             </Button>
                             <Button onClick={() => navigate("/games")}
-                                sx={category === "games"? filterButtonStyleSelected: filterButtonStyleCommon} 
-                                variant={category === "games"? "contained":"outlined"}>
-                                    GAME DEV
+                                sx={category === "games" ? filterButtonStyleSelected : filterButtonStyleCommon}
+                                variant={category === "games" ? "contained" : "outlined"}>
+                                GAME DEV
                             </Button>
-                            <Button onClick={() =>  window.open("https://www.artstation.com/josh-w-concept/albums/14822509", "_blank")}
+                            <Button onClick={() => window.open("https://www.artstation.com/josh-w-concept/albums/14822509", "_blank")}
                                 sx={filterButtonStyleCommon} variant="outlined">CONCEPT ART</Button>
 
                         </Stack>
                         <Fade in={show} >
                             <Stack direction="row" alignItems="center" justifyContent="start"
-                                sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "10px",paddingLeft:"0px"  }}>
+                                sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "10px", paddingLeft: "0px" }}>
                                 {visibleProjects.map(project => <Project
                                     key={project.name}
                                     name={project.name}
@@ -171,7 +206,7 @@ function Projects() {
                     </Stack >
                 </Stack>
             </Stack>
-</ThemeProvider>
+        </ThemeProvider>
 
     )
 }

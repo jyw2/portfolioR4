@@ -34,10 +34,17 @@ function Project(props) {
                 }} >
                 <Container sx={{
                     position:'absolute',
-                    color:'black'
+                    top:0,
+                    left:0,
+                    backgroundColor:'black',
+                    width: "100%",
+                    height:"100%",
+                    opacity:0.5,
+                    borderRadius: '1px',
+                    zIndex:"0"
                 }}/>
-                
-                <Stack justifyContent={"space-between"} height={"100%"}>
+ 
+                <Stack justifyContent={"space-between"} height={"100%"} zIndex={2} position="relative">
                     <Stack justifyContent={"flex-start"} >
                         {props.subTitle.split("/").map(line =>
                             <Typography align="left" variant="h5" key={line} sx={{
@@ -55,6 +62,8 @@ function Project(props) {
                             fontFamily: "inter",
                             fontWeight: "bold",
                             marginBottom:"14px",
+                            marginTop:"15px",
+                            lineHeight:"40px",
                             color: colors.secondaryLight,
                         }}>{line}</Typography>)}
 
@@ -65,7 +74,7 @@ function Project(props) {
                             {props.keywords.join(", ")}
                         </Typography>
                 </Stack>
-                <Stack spacing={1} direction="row" alignItems="center" justifyContent="space-between"
+                <Stack spacing={0.5} direction="row" alignItems="center" justifyContent="space-between"
                     sx={{borderRadius:"1px", width:"100%" }}>
                     <Button disabled={(!props.codeLink)} target="_blank" href={props.codeLink}
                         sx={{ textTransform: "unset", backgroundColor: colors.primaryLight, color: "black",borderRadius:"1px", width:"100%" }}
@@ -78,6 +87,7 @@ function Project(props) {
                         variant="contained">site</Button>
                 </Stack>
                 </Stack>
+                
             </Container >
         </Container >
     )

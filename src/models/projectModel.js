@@ -7,6 +7,7 @@ class ProjectModel {
         keywords,
         codeLink,
         viewLink,
+        demoLink
     ) {
         this.name = name
         this.subTitle = subTitle
@@ -15,6 +16,7 @@ class ProjectModel {
         this.keywords = keywords
         this.codeLink = codeLink
         this.viewLink = viewLink
+        this.demoLink = demoLink
     }
 }
 
