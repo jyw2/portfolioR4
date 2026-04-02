@@ -6,12 +6,6 @@ import '../styles/hoverBump.css';
 import colors from '../styles/colors';
 
 function Project(props) {
-    let subTitleFlipFlop = true
-    function getSubTitleLineShift(line) {
-        subTitleFlipFlop = !subTitleFlipFlop
-        return (subTitleFlipFlop ? 1 : -1) * 25 * (line.length / 3)
-    }
-
     return (
         <Container
             sx={{ position: "relative", width: "fit-content", margin: '20px', zIndex: "6", marginLeft:"0px", }} disableGutters>

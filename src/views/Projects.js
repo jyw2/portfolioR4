@@ -1,7 +1,6 @@
 import Stack from '@mui/material/Stack';
 import Project from './Project';
 import ProjectModel from '../models/projectModel';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useState, useEffect } from 'react'
 import Fade from '@mui/material/Fade';
@@ -39,7 +38,7 @@ function Projects() {
         ),
         new ProjectModel(
             "ARRAY CLONE",
-            "PHOTOSHOP/ARRAY LAYER/PLUGIN",
+            "PHOTOSHOP/ARRAY LAYER/PLUGIN \\ TOOL",
             '/src/assets/project-backgrounds/lex-lab.png',
             "Photoshop plugin to clone a layer in a line along an angled axis.",
             ["Techart", "Photoshop", "JavaScript"],
@@ -52,7 +51,7 @@ function Projects() {
             "OIL TRUCKING/MANAGEMENT/WEB APP",
             '/project_images/ironsight.png',
             "Vue full stack web app for " +
-            "managing oil trucking and related " + "industry tasks.",
+            "managing oil trucking and related industry tasks.",
             ["Web", "Vue", "SQL", ".NET", "Azure", "Integrations", "Team"],
             "",
             'https://www.ironsight.app/',
@@ -63,7 +62,7 @@ function Projects() {
             "STREET FIGHTER/COMBO SHARING/WEB APP",
             '/project_images/combo_central.png',
             "Full stack web app to create and " +
-            "share combos featuring accounts " + "and CRUD.",
+            "share combos featuring accounts and CRUD.",
             ["Web", "React", "Firebase", "MongoDB", "Solo"],
             "",
             "",
