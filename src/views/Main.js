@@ -25,7 +25,7 @@ function Main() {
                 <section id="background"
                     style={{
                         width: "100%", height: "100%", backgroundImage: `url(${bgLink})`,
-                        backgroundSize: 'contain', zIndex: "-1"
+                        backgroundSize: '100%', zIndex: "-1"
                     }} className="layer" />
 
 
