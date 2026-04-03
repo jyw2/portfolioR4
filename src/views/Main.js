@@ -12,14 +12,14 @@ import constants from '../constants';
 function Main() {
     const bgLink = "https://imgur.com/eAArZiy.png"
     const contentRef = React.createRef();
-    // const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
+    const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
 
     return (
         <ThemeProvider theme={defaultTheme}>
-            <div style={{ height: "fit-content", minHeight:"100vh", position: "relative", overflowX: "hidden"}}>
+            <div style={{ height: "fit-content", minHeight: "100vh", position: "relative", overflowX: "hidden" }}>
                 <section id="background"
                     style={{
-                        width: "100%", height: "100%",backgroundColor:"black",
+                        width: "100%", height: "100%", backgroundColor: "black",
                         zIndex: "-2"
                     }} className="layer" />
                 <section id="background"
@@ -27,9 +27,9 @@ function Main() {
                         width: "100%", height: "100%", backgroundImage: `url(${bgLink})`,
                         backgroundSize: 'contain', zIndex: "-1"
                     }} className="layer" />
-           
 
-                <Stack sx={{ zIndex: "4",paddingBottom:"80px" }} alignItems="center" spacing={10}
+
+                <Stack sx={{ zIndex: "4", paddingBottom: "80px" }} alignItems="center" spacing={small ? 4 : 10}
                     justifyContent="center" ref={contentRef}>
                     <About />
                     <Projects />

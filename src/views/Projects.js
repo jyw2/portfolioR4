@@ -131,8 +131,8 @@ function Projects() {
     const [show, setShow] = useState(true)
 
     const filterButtonStyleCommon = {
-        width: small ? "200px" : "100%", fontSize: "15px", height: "50px",
-        textTransform: "unset", fontWeight: "bold", borderRadius: "1px"
+        width: small ? "90%" : "100%", fontSize: "15px", height: small ? "30px" : "50px",
+        textTransform: "unset", fontWeight: small ? "" : "bold", borderRadius: "1px"
     }
     const filterButtonStyleSelected = {
         ...filterButtonStyleCommon,
@@ -155,10 +155,11 @@ function Projects() {
         <ThemeProvider theme={theme}>
             <Stack backgroundColor={colors.primarySemiLight} width={"100%"} paddingTop={"10px"} paddingBottom={"10px"}>
                 <Stack sx={{
-                    backgroundColor: colors.primarySemiLight, width: "100%", justifyContent: "center", alignItems: "center"
+                    backgroundColor: colors.primarySemiLight, width: "100%", justifyContent: "center",
+                    alignItems: "center",
                 }}>
                     < Stack alignItems="center" justifyContent="center" spacing={3} sx={{
-                        postion: "relative", paddingTop: "20px", paddingBottom: "20px", paddingRight: "10%", paddingLeft: "10%",
+                        postion: "relative", paddingTop: small ? "0px" : "20px", paddingBottom: "20px", paddingRight: "10%", paddingLeft: "10%",
                         maxWidth: "1310px", width: "100%"
                     }} >
                         <Stack spacing={0.5} direction={small ? "column" : "row"} alignItems="center"
@@ -183,7 +184,7 @@ function Projects() {
 
                         </Stack>
                         <Fade in={show} >
-                            <Stack direction="row" alignItems="center" justifyContent="start"
+                            <Stack direction="row" alignItems="center" justifyContent={small ? "center" : "start"}
                                 sx={{ maxWidth: "1500px", flexWrap: 'wrap', width: '100%', gap: "10px", paddingLeft: "0px" }}>
                                 {visibleProjects.map(project => <Project
                                     key={project.name}

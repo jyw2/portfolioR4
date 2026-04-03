@@ -15,8 +15,9 @@ import constants from '../constants';
 function About() {
 
     const small = useMediaQuery(`(max-width: ${constants.smallBreakPoint})`);
-    const iconStyle = {  marginRight:"-10px" }
-    
+    const iconStyle = { marginRight: "-10px" }
+    const smallIconStyle = { marginRight: "-5px" }
+
     function handleGitClick() {
         window.open("https://github.com/jyw2")
     }
@@ -36,23 +37,23 @@ function About() {
 
     return (
         <Stack sx={{
-            width: '50%', marginTop: '70px'
+            width: small ? '100%' : '50%', marginTop: small ? '20px' : '70px'
         }} spacing={2} alignItems="center" justifyContent="center" >
             <div>
                 <Fade in={showWelcome}>
-                    <Container sx={{ position: "relative", width: "fit-content", display:"flex" }} >
+                    <Container sx={{ position: "relative", width: "fit-content", display: "flex" }} >
                         <Typography variant='h1' align="center" sx={
                             {
-                                fontSize: small ? "40px" : "120px", color: "white",
-                                letterSpacing: small ? '-10px' : '-10px', fontFamily: "inter", fontWeight: "bold", paddingRight:"20px"
+                                fontSize: small ? "50px" : "120px", color: "white",
+                                letterSpacing: small ? '-2px' : '-10px', fontFamily: "inter", fontWeight: "bold", paddingRight: "20px"
                             }}
                         >
                             JOSH
                         </Typography>
                         <Typography variant='h1' align="center" sx={
                             {
-                                fontSize: small ? "40px" : "120px", color: '#e0db31', 
-                                letterSpacing: small ? '-10px' : '-10px', fontFamily: "inter", fontWeight: "bold"
+                                fontSize: small ? "50px" : "120px", color: '#e0db31',
+                                letterSpacing: small ? '-2px' : '-10px', fontFamily: "inter", fontWeight: "bold"
                             }}
                         >
                             WONG
@@ -62,39 +63,40 @@ function About() {
 
                 <Fade in={showDesc}>
                     <div>
-             
-                        <Stack direction="row" spacing={4} align="center" alignItems="center" justifyContent="center" 
-                            sx={{border:"1px solid grey", marginLeft:"5%",  marginRight:"5%",}}
+
+                        <Stack direction={small ? "column" : "row"} spacing={small ? -2 : 4} align="center" alignItems="start" justifyContent="center"
+                            sx={{ border: "1px solid grey", marginLeft: "5%", marginRight: "5%" }}
                         >
-                            {small ? "" : <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
-                                <IconButton disabled sx={small ? {}: iconStyle}>
-                                    <EmailIcon sx ={{ color: colors.primaryLight }}/>
+                            <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
+                                <IconButton disabled sx={small ? smallIconStyle : iconStyle}>
+                                    <EmailIcon sx={{ color: colors.primaryLight }} />
                                 </IconButton>
-                                <Typography align="center" display='flex' alignItems="center" color={colors.primaryLight} >
+                                <Typography align="center" display='flex' alignItems="center" color={colors.primaryLight}
+                                    sx={{ fontSize: small ? "13px" : "16px" }} >
                                     Josh.w.code@gmail.com
                                 </Typography>
-                            </Stack>}
-                                
+                            </Stack>
+
                             <Stack sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
-                                <IconButton href="https://github.com/jyw2" target="_blank"  
-                                    sx={small ? {}: iconStyle}>
-                                    <CodeIcon sx ={{ color: colors.primaryLight }}/>
+                                <IconButton href="https://github.com/jyw2" target="_blank"
+                                    sx={small ? smallIconStyle : iconStyle}>
+                                    <CodeIcon sx={{ color: colors.primaryLight }} />
                                 </IconButton>
                                 <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"
-                                    style={{ cursor: "pointer" }} onClick={handleGitClick}>
+                                    style={{ cursor: "pointer", fontSize: small ? "13px" : "16px" }} onClick={handleGitClick}>
                                     Github
                                 </Typography>
                             </Stack>
 
-                            <Stack paddingRight={3} sx={{ position: "relative" }} direction="row" spacing={1} align="center">
+                            <Stack paddingRight={small ? 0 : 3} sx={{ position: "relative" }} direction="row" spacing={1} align="center">
 
                                 <IconButton href="https://www.linkedin.com/in/jyw2/" target="_blank"
-                                    sx={small ? {}: iconStyle}>
-                                    <WorkIcon sx ={{ color: colors.primaryLight }}/>
+                                    sx={small ? smallIconStyle : iconStyle}>
+                                    <WorkIcon sx={{ color: colors.primaryLight }} />
                                 </IconButton>
                                 <Typography color={colors.primaryLight} align="center" display='flex' alignItems="center"
-                                    style={{ cursor: "pointer" }} onClick={handleLinkedInClick}>
+                                    style={{ cursor: "pointer", fontSize: small ? "13px" : "16px" }} onClick={handleLinkedInClick}>
                                     LinkedIn
                                 </Typography>
                             </Stack>
