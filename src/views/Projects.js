@@ -65,7 +65,7 @@ function Projects() {
             "share combos featuring accounts and CRUD.",
             ["Web", "React", "Firebase", "MongoDB", "Solo"],
             "",
-            "",
+            "https://sf6.combocentral.com/combo/luke-sullivan/69d06407540ae0e3e736a751",
             ""
         ),
         new ProjectModel(
@@ -76,7 +76,7 @@ function Projects() {
             "with online multiplayer and bots.",
             ["Web", "Games", "React", "Networks", "JavaScript", "Team"],
             'https://github.com/ece493/lexicon-labyrinth',
-            "",
+            "https://lexlab.jyuenw.com/",
             ""
         ),
         new ProjectModel(
