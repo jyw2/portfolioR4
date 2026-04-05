@@ -29,22 +29,22 @@ function Projects() {
         new ProjectModel(
             "QUICK LINEART",
             "BLENDER/LINE ART/SCRIPT \\ TOOL",
-            '/src/assets/project-backgrounds/lex-lab.png',
+            '/project_images/blender_lineart.png',
             "Blender scripts to add dynamic lineart and export both a transparent line and a render layer.",
             ["Techart", "Blender", "Python"],
-            "",
+            "https://github.com/jyw2/blender-lineart-scripts/tree/main",
             '',
-            ''
+            'https://youtu.be/tEcR5DeaE60'
         ),
         new ProjectModel(
-            "ARRAY CLONE",
+            "LAYER ARRAY",
             "PHOTOSHOP/ARRAY LAYER/PLUGIN \\ TOOL",
-            '/src/assets/project-backgrounds/lex-lab.png',
+            '/project_images/layer_array.png',
             "Photoshop plugin to clone a layer in a line along an angled axis.",
             ["Techart", "Photoshop", "JavaScript"],
-            "",
+            "https://github.com/jyw2/layer-array/tree/main",
             '',
-            ''
+            'https://youtu.be/pXAE0u3ECgY'
         ),
         new ProjectModel(
             "IRONSIGHT",
@@ -65,8 +65,8 @@ function Projects() {
             "share combos featuring accounts and CRUD.",
             ["Web", "React", "Firebase", "MongoDB", "Solo"],
             "",
-            "https://sf6.combocentral.com/combo/luke-sullivan/69d06407540ae0e3e736a751",
-            ""
+            "https://sf6.combocentral.com/combo/luke-sullivan/69d2d5ca0a891d61eaf9968f",
+            "https://youtu.be/EO5sJ7pNLFg"
         ),
         new ProjectModel(
             "LEXICON LABYRINTH",
@@ -74,10 +74,10 @@ function Projects() {
             '/project_images/lex_lab.png',
             "React based browser puzzle game " +
             "with online multiplayer and bots.",
-            ["Web", "Games", "React", "Networks", "JavaScript", "Team"],
+            ["Web", "Games", "Teachart","React", "Networks", "JavaScript", "Team"],
             'https://github.com/ece493/lexicon-labyrinth',
             "https://lexlab.jyuenw.com/",
-            ""
+            "https://youtu.be/4EwhRMNvdRo"
         ),
         new ProjectModel(
             "BDO GS",
@@ -88,8 +88,8 @@ function Projects() {
             "gameplay sessions or 'grinds'.",
             ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase", "Solo"],
             'https://github.com/jyw2/grindSpot',
-            "",
-            'https://grindspot.jyuenw.com/',
+            "https://grindspot.jyuenw.com/",
+            '',
         ),
         new ProjectModel(
             "One + One",
@@ -98,7 +98,7 @@ function Projects() {
             `Electron based gesture drawing assistant app created using electron.`,
             ["Web", "Electron", "React", "Solo"],
             'https://github.com/jyw2/onePlusOne',
-            "asdasdas",
+            "",
             "https://www.youtube.com/watch?v=uiyajTV66Rw"
         ),
         new ProjectModel(
