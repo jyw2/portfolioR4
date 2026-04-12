@@ -80,18 +80,6 @@ function Projects() {
             "https://youtu.be/4EwhRMNvdRo"
         ),
         new ProjectModel(
-            "BDO GT",
-            "MMORPG/TRACKER/UTILITY",
-            '/project_images/gs.png',
-            "Angular based web app that " +
-            "records and shares your " +
-            "gameplay sessions or 'grinds'.",
-            ["Web", "Angular", "JavaScript", "UI/UX", "Apache2", "Servers", "FireBase", "Solo"],
-            'https://github.com/jyw2/grindSpot',
-            "https://grindspot.jyuenw.com/",
-            '',
-        ),
-        new ProjectModel(
             "One + One",
             "GESTURE/DRAWING/TOOL",
             '/project_images/one_plus_one.png',
