@@ -74,13 +74,13 @@ function Projects() {
             '/project_images/lex_lab.png',
             "React based browser puzzle game " +
             "with online multiplayer and bots.",
-            ["Web", "Games", "Teachart","React", "Networks", "JavaScript", "Team"],
-            'https://github.com/ece493/lexicon-labyrinth',
+            ["Web", "Games", "React", "Networks", "JavaScript", "Team"],
+            'https://github.com/jyw2/lexicon-labyrinth-prod',
             "https://lexlab.jyuenw.com/",
             "https://youtu.be/4EwhRMNvdRo"
         ),
         new ProjectModel(
-            "BDO GS",
+            "BDO GT",
             "MMORPG/TRACKER/UTILITY",
             '/project_images/gs.png',
             "Angular based web app that " +
@@ -95,7 +95,7 @@ function Projects() {
             "One + One",
             "GESTURE/DRAWING/TOOL",
             '/project_images/one_plus_one.png',
-            `Electron based gesture drawing assistant app created using electron.`,
+            `Electron based native gesture drawing assistant app.`,
             ["Web", "Electron", "React", "Solo"],
             'https://github.com/jyw2/onePlusOne',
             "",
