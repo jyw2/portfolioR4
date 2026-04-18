@@ -64,7 +64,7 @@ function Projects() {
             "Full stack web app to create and " +
             "share combos featuring accounts and CRUD.",
             ["Web", "React", "Firebase", "MongoDB", "Solo"],
-            "",
+            "https://github.com/jyw2/combo-central",
             "https://sf6.combocentral.com/combo/luke-sullivan/69d2d5ca0a891d61eaf9968f",
             "https://youtu.be/EO5sJ7pNLFg"
         ),
